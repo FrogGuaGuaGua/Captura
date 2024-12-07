@@ -12,6 +12,7 @@ using Device = SharpDX.Direct3D11.Device;
 using Factory = SharpDX.DirectWrite.Factory;
 using Factory1 = SharpDX.Direct2D1.Factory1;
 using PixelFormat = SharpDX.Direct2D1.PixelFormat;
+using SharpDX;
 
 namespace Captura.Windows.DirectX
 {
@@ -126,16 +127,36 @@ namespace Captura.Windows.DirectX
 
         public void EndDraw()
         {
-            RenderTarget.EndDraw();
-            Device.ImmediateContext.CopyResource(DesktopTexture, StagingTexture);
+            try
+            {   // SharpDX.SharpDXException: HRESULT: [0x8899000C], Module: [SharpDX.Direct2D1],
+                // ApiCode: [D2DERR_RECREATE_TARGET/RecreateTarget],
+                // Message: 存在可以恢复的演示错误。调用方需要重新创建、重新渲染整个帧，并重新尝试显示。
+                RenderTarget.EndDraw();
+                Device.ImmediateContext.CopyResource(DesktopTexture, StagingTexture);
 
-            if (_previewWindow.IsVisible)
-            {
-                Device.ImmediateContext.CopyResource(StagingTexture, PreviewTexture);
+                if (_previewWindow.IsVisible)
+                {
+                    Device.ImmediateContext.CopyResource(StagingTexture, PreviewTexture);
+                }
+                // Actual CopyResource happens here
+                Device.ImmediateContext.Flush();
             }
+            catch (SharpDXException ex) when (ex.ResultCode == SharpDX.Direct2D1.ResultCode.RecreateTarget)
+            {
+                RecreateRenderTarget();
+            }
+        }
 
-            // Actual CopyResource happens here
-            Device.ImmediateContext.Flush();
+        private void RecreateRenderTarget()
+        {
+            var pixelFormat = new PixelFormat(Format.Unknown, AlphaMode.Ignore);
+            var renderTargetProps = new RenderTargetProperties(pixelFormat);
+            using (var surface = DesktopTexture.QueryInterface<Surface>())
+            {   //SharpDX.SharpDXException:“HRESULT: [0x887A0005], Module: [SharpDX.DXGI],
+                //ApiCode: [DXGI_ERROR_DEVICE_REMOVED/DeviceRemoved],
+                //Message: GPU 设备实例已经暂停。使用 GetDeviceRemovedReason 以确定相应的措施。
+                RenderTarget = new RenderTarget(_factory, surface, renderTargetProps);
+            }
         }
 
         public void Dispose()
