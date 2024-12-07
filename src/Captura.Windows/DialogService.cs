@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using Captura.Models;
-using Ookii.Dialogs;
+using Ookii.Dialogs.WinForms;
 
 namespace Captura.Windows
 {
