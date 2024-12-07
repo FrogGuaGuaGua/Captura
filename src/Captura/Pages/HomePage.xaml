@@ -87,11 +87,11 @@
                                       SelectedColor="{Binding RegionSelectorViewModel.BrushColor.Value, Mode=TwoWay, Source={StaticResource ServiceLocator}}"
                                       VerticalAlignment="Center"
                                       ColorMode="ColorCanvas"
-                                      ShowAdvancedButton="True"
-                                      AdvancedButtonHeader="Color Canvas"
-                                      StandardButtonHeader="Pallette"
                                       Width="50"
                                       ShowRecentColors="True"/>
+                                      <!--ShowAdvancedButton="True"
+                                      AdvancedButtonHeader="Color Canvas"
+                                      StandardButtonHeader="Pallette"-->
 
                     <xctk:IntegerUpDown Minimum="1"
                                         Maximum="99"

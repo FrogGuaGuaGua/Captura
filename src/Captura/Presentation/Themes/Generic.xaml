@@ -25,7 +25,7 @@
     
     <Style TargetType="xctk:ColorPicker" BasedOn="{StaticResource {x:Type xctk:ColorPicker}}">
         <Setter Property="ColorMode" Value="ColorCanvas"/>
-        <Setter Property="ShowAdvancedButton" Value="False"/>
+        <!--<Setter Property="ShowAdvancedButton" Value="False"/>-->
     </Style>
     
     <Style TargetType="xctk:SplitButton" BasedOn="{StaticResource {x:Type xctk:SplitButton}}">

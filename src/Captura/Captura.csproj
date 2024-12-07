@@ -3,13 +3,25 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Captura</RootNamespace>
     <AssemblyName>captura</AssemblyName>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <UseWPF>true</UseWPF>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon>Images\Captura.ico</ApplicationIcon>
     <Prefer32Bit>false</Prefer32Bit>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <Company />
+    <Authors>磁悬浮青蛙呱呱呱</Authors>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Resource Include="Images\Logo.png" />
@@ -40,6 +52,8 @@
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageReference Include="ModernUI.WPF" Version="1.0.9" />
     <PackageReference Include="SamOatesGames.ModernUI.Xceed.Toolkit" Version="1.0.1905191936" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
   <Target Name="Delete unused libs" AfterTargets="Build">
     <ItemGroup>
