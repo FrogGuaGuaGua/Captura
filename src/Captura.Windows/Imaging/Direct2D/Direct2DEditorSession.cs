@@ -13,6 +13,7 @@ using Factory = SharpDX.DirectWrite.Factory;
 using Factory1 = SharpDX.Direct2D1.Factory1;
 using PixelFormat = SharpDX.Direct2D1.PixelFormat;
 using SharpDX;
+using MediaFoundation;
 
 namespace Captura.Windows.DirectX
 {
@@ -98,7 +99,11 @@ namespace Captura.Windows.DirectX
             {
                 RenderTarget = new RenderTarget(_factory, surface, renderTargetProps);
             }
-
+            // System.MissingMethodException, HResult = 0x80131513
+            // Message = Method not found: 'SharpDX.MediaFoundation.Activate[]
+            // SharpDX.MediaFoundation.MediaFactory.FindTransform(System.Guid,
+            // SharpDX.MediaFoundation.TransformEnumFlag, System.Nullable`1<SharpDX.MediaFoundation.TRegisterTypeInformation>,
+            // System.Nullable`1<SharpDX.MediaFoundation.TRegisterTypeInformation>)'.
             ColorConverter = new Lazy<MfColorConverter>(() => new MfColorConverter(Width, Height, Device));
         }
 
@@ -152,10 +157,31 @@ namespace Captura.Windows.DirectX
             var pixelFormat = new PixelFormat(Format.Unknown, AlphaMode.Ignore);
             var renderTargetProps = new RenderTargetProperties(pixelFormat);
             using (var surface = DesktopTexture.QueryInterface<Surface>())
-            {   //SharpDX.SharpDXException:“HRESULT: [0x887A0005], Module: [SharpDX.DXGI],
-                //ApiCode: [DXGI_ERROR_DEVICE_REMOVED/DeviceRemoved],
-                //Message: GPU 设备实例已经暂停。使用 GetDeviceRemovedReason 以确定相应的措施。
-                RenderTarget = new RenderTarget(_factory, surface, renderTargetProps);
+            {
+                try
+                {   //SharpDX.SharpDXException:“HRESULT: [0x887A0005], Module: [SharpDX.DXGI],
+                    //ApiCode: [DXGI_ERROR_DEVICE_REMOVED/DeviceRemoved],
+                    //Message: GPU 设备实例已经暂停。使用 GetDeviceRemovedReason 以确定相应的措施。
+                    RenderTarget = new RenderTarget(_factory, surface, renderTargetProps);
+                }
+                catch (SharpDXException ex) when (ex.ResultCode == SharpDX.DXGI.ResultCode.DeviceRemoved)
+                {
+                    // Handle device removed scenario
+                    var reason = Device.DeviceRemovedReason;
+                    // Log or handle the reason as needed
+                    // Recreate the device and related resources
+                    Device.Dispose();
+                    Device = new Device(DriverType.Hardware, DeviceCreationFlags.BgraSupport | DeviceCreationFlags.VideoSupport);
+                    // Recreate textures and other resources
+                    StagingTexture = new Texture2D(Device, StagingTexture.Description);
+                    DesktopTexture = new Texture2D(Device, DesktopTexture.Description);
+                    PreviewTexture = new Texture2D(Device, PreviewTexture.Description);
+                    // Recreate the render target
+                    using (var newSurface = DesktopTexture.QueryInterface<Surface>())
+                    {
+                        RenderTarget = new RenderTarget(_factory, newSurface, renderTargetProps);
+                    }
+                }
             }
         }
 

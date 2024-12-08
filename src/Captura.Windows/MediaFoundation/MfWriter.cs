@@ -195,6 +195,8 @@ namespace Captura.Windows.MediaFoundation
                     Sample.Set(SampleAttributeKeys.Discontinuity, true);
                     _first = false;
                 }
+                // SharpDX.SharpDXException:“HRESULT: [0x80004005], Module: [General],
+                // ApiCode: [E_FAIL/Unspecified error], Message: 未指定的错误
                 _writer.WriteSample(VideoStreamIndex, Sample);
             }
         }

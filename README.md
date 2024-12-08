@@ -1,12 +1,29 @@
-![Captura](https://mathewsachin.github.io/Captura/assets/Banner.png)
+需要在Configure > Video 里面勾选 Use GDI instead of DesktopDuplication, 才能避免众多报错，勉强能用，我正在尝试解决下面的问题。
 
-[![Master Build Status](https://img.shields.io/appveyor/ci/MathewSachin/Captura/master.svg?style=flat-square&logo=appveyor)](https://ci.appveyor.com/project/MathewSachin/Captura)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
-[![Chat](https://img.shields.io/badge/chat-on_gitter-yellow.svg?style=flat-square&logo=gitter)](https://gitter.im/MathewSachin/Captura)
+问题：
+MfWriter.cs
+    198行 _writer.WriteSample(VideoStreamIndex, Sample); 
+        // SharpDX.SharpDXException:“HRESULT: [0x80004005], Module: [General], 
+        // ApiCode: [E_FAIL/Unspecified error], Message: 未指定的错误
 
-[![Downloads](https://img.shields.io/github/downloads/MathewSachin/Captura/total.svg?style=flat-square)](https://mathewsachin.github.io/Captura/download)
-[![PayPal Donate](https://img.shields.io/badge/donate-PayPal-orange.svg?style=flat-square&logo=paypal)](https://mathewsachin.github.io/Captura/donate)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/captura/localized.svg)](https://crowdin.com/project/captura)
+Direct2DEditorSession.cs
+    102行, ColorConverter = new Lazy<MfColorConverter>(() => new MfColorConverter(Width, Height, Device));
+        // System.MissingMethodException, HResult = 0x80131513
+        // Message = Method not found: 'SharpDX.MediaFoundation.Activate[]
+        // SharpDX.MediaFoundation.MediaFactory.FindTransform(System.Guid,
+        // SharpDX.MediaFoundation.TransformEnumFlag, System.Nullable`1<SharpDX.MediaFoundation.TRegisterTypeInformation>,
+        // System.Nullable`1<SharpDX.MediaFoundation.TRegisterTypeInformation>)'.
+
+    public void EndDraw() 
+        RenderTarget.EndDraw();
+        // SharpDX.SharpDXException: HRESULT: [0x8899000C], Module: [SharpDX.Direct2D1],
+        // ApiCode: [D2DERR_RECREATE_TARGET/RecreateTarget],
+        // Message: 存在可以恢复的演示错误。调用方需要重新创建、重新渲染整个帧，并重新尝试显示。
+
+    增加RenderTarget = new RenderTarget(_factory, surface, renderTargetProps);
+        // SharpDX.SharpDXException:“HRESULT: [0x887A0005], Module: [SharpDX.DXGI],
+        // ApiCode: [DXGI_ERROR_DEVICE_REMOVED/DeviceRemoved],
+        // Message: GPU 设备实例已经暂停。使用 GetDeviceRemovedReason 以确定相应的措施。
 
 &copy; [Copyright 2019](LICENSE.md) Mathew Sachin
 
