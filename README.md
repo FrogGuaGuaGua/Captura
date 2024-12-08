@@ -1,8 +1,9 @@
 需要在Configure > Video 里面勾选 Use GDI instead of DesktopDuplication, 才能避免众多报错，勉强能用，我正在尝试解决下面的问题。
 
 问题：
+```csharp
 MfWriter.cs
-    198行 _writer.WriteSample(VideoStreamIndex, Sample); 
+    198行, _writer.WriteSample(VideoStreamIndex, Sample); 
         // SharpDX.SharpDXException:“HRESULT: [0x80004005], Module: [General], 
         // ApiCode: [E_FAIL/Unspecified error], Message: 未指定的错误
 
@@ -24,10 +25,8 @@ Direct2DEditorSession.cs
         // SharpDX.SharpDXException:“HRESULT: [0x887A0005], Module: [SharpDX.DXGI],
         // ApiCode: [DXGI_ERROR_DEVICE_REMOVED/DeviceRemoved],
         // Message: GPU 设备实例已经暂停。使用 GetDeviceRemovedReason 以确定相应的措施。
-
+```
 &copy; [Copyright 2019](LICENSE.md) Mathew Sachin
-
-:link: <https://mathewsachin.github.io/Captura/>
 
 Capture Screen, WebCam, Audio, Cursor, Mouse Clicks and Keystrokes.
 
