@@ -81,7 +81,14 @@ namespace Captura
 
         public static void LaunchFile(ProcessStartInfo StartInfo)
         {
-            try { Process.Start(StartInfo.FileName); }
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = StartInfo.FileName,
+                    UseShellExecute = true
+                });
+            }
             catch (Win32Exception e) when (e.NativeErrorCode == 2)
             {
                 MessageProvider.ShowError($"Could not find file: {StartInfo.FileName}");
