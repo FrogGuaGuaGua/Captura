@@ -1,7 +1,7 @@
-﻿using System;
-using System.Drawing;
-using Captura.Windows.Gdi;
+﻿using Captura.Windows.Gdi;
 using Reactive.Bindings;
+using System;
+using System.Drawing;
 
 namespace Captura.Webcam
 {

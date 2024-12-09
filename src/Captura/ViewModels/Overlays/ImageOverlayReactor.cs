@@ -1,7 +1,7 @@
-﻿using System.Reactive.Linq;
-using Captura.Video;
+﻿using Captura.Video;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
+using System.Reactive.Linq;
 
 namespace Captura.ViewModels
 {

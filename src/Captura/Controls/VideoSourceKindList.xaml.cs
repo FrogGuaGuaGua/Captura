@@ -1,6 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using Captura.Video;
+using System.Windows.Controls;
 using System.Windows.Input;
-using Captura.Video;
 
 namespace Captura
 {

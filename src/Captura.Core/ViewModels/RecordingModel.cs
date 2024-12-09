@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Loc;
 using Captura.Models;
@@ -12,6 +7,11 @@ using Captura.MouseKeyHook.Steps;
 using Captura.Video;
 using Captura.Webcam;
 using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Captura.ViewModels
 {
@@ -241,7 +241,7 @@ namespace Captura.ViewModels
                 Settings.Keystrokes,
                 Settings.Steps,
                 _keymap);
-            
+
             return true;
         }
 
@@ -401,7 +401,7 @@ namespace Captura.ViewModels
             {
                 var recorders = audioProviders
                     .Select((M, Index) => GetAudioRecorder(M, GetAudioFileName(Index)))
-                    .Concat(new[] {_recorder})
+                    .Concat(new[] { _recorder })
                     .ToArray();
 
                 _recorder = new MultiRecorder(recorders);

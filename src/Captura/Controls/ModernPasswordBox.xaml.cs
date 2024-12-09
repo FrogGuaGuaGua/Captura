@@ -26,7 +26,7 @@ namespace Captura
 
         public string Password
         {
-            get => (string) GetValue(PasswordProperty);
+            get => (string)GetValue(PasswordProperty);
             set => SetValue(PasswordProperty, value);
         }
 

@@ -1,8 +1,8 @@
-﻿using System.Reactive.Linq;
+﻿using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Windows;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 using Point = System.Drawing.Point;
 
 namespace Captura.ViewModels

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Captura.Models;
+using Reactive.Bindings;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Captura.Models;
-using Reactive.Bindings;
 
 namespace Captura.ViewModels
 {

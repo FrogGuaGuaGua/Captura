@@ -3,7 +3,7 @@
     public class FakePropertyStore : PropertyStore
     {
         public const string DefaultPropertyValue = "Default Value";
-        
+
         public string Property
         {
             get => Get(DefaultPropertyValue);

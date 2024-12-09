@@ -1,6 +1,6 @@
-﻿using System;
-using Captura.Imgur;
+﻿using Captura.Imgur;
 using Captura.YouTube;
+using System;
 
 namespace Captura
 {

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using CommandLine;
+﻿using CommandLine;
 using CommandLine.Text;
+using System.Collections.Generic;
 
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
@@ -20,7 +20,7 @@ namespace Captura
 
         [Option('y', HelpText = "Overwrite existing file")]
         public bool Overwrite { get; set; }
-        
+
         [Option("keys", HelpText = "Include Keystrokes in Recording (default = false).")]
         public bool Keys { get; set; }
 

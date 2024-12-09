@@ -16,8 +16,8 @@ namespace Captura
             {
                 var matrix = src.CompositionTarget.TransformToDevice;
 
-                X = (float) matrix.M11;
-                Y = (float) matrix.M22;
+                X = (float)matrix.M11;
+                Y = (float)matrix.M22;
             }
         }
 

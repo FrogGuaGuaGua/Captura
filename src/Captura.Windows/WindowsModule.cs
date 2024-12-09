@@ -1,10 +1,10 @@
 ﻿using Captura.Audio;
 using Captura.Models;
-using System;
 using Captura.Video;
 using Captura.Webcam;
 using Captura.Windows.Gdi;
 using Captura.Windows.MediaFoundation;
+using System;
 
 namespace Captura.Windows
 {

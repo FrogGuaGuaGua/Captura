@@ -1,7 +1,7 @@
-﻿using System.Windows;
-using System.Windows.Media;
-using Captura.ViewModels;
+﻿using Captura.ViewModels;
 using FirstFloor.ModernUI.Presentation;
+using System.Windows;
+using System.Windows.Media;
 
 namespace Captura
 {

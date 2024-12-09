@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Captura.Video;
+﻿using Captura.Video;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Captura.Windows.MediaFoundation
 {

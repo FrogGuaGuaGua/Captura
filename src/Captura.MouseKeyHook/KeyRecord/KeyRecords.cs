@@ -25,17 +25,17 @@ namespace Captura.MouseKeyHook
 
             _records.Add(KeyRecord);
         }
-        
+
         public IKeyRecord Last
         {
-            get => _records.Count == 0 ? null : _records [_records.Count - 1];
+            get => _records.Count == 0 ? null : _records[_records.Count - 1];
             set
             {
                 if (_records.Count == 0)
                     _records.Add(value);
                 else _records[_records.Count - 1] = value;
             }
-        } 
+        }
 
         public IEnumerator<IKeyRecord> GetEnumerator()
         {

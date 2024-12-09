@@ -44,7 +44,7 @@ namespace Captura.Tests.Console
 
             return process;
         }
-        
+
         [Fact]
         public void StartSharpAvi()
         {

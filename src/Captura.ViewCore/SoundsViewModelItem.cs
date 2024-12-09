@@ -1,8 +1,8 @@
-﻿using System.IO;
-using System.Windows.Input;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Models;
 using Reactive.Bindings;
+using System.IO;
+using System.Windows.Input;
 
 namespace Captura.ViewModels
 {

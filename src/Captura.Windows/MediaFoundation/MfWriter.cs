@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Native;
 using Captura.Video;
 using Captura.Windows.DirectX;
@@ -8,6 +6,8 @@ using SharpDX;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
 using SharpDX.MediaFoundation;
+using System;
+using System.Runtime.InteropServices;
 using Device = SharpDX.Direct3D11.Device;
 
 namespace Captura.Windows.MediaFoundation
@@ -141,7 +141,7 @@ namespace Captura.Windows.MediaFoundation
             });
 
             _sample = MediaFactory.CreateVideoSampleFromSurface(null);
-                
+
             // Create the media buffer from the texture
             MediaFactory.CreateDXGISurfaceBuffer(typeof(Texture2D).GUID, _copyTexture, 0, false, out _mediaBuffer);
 
@@ -155,7 +155,7 @@ namespace Captura.Windows.MediaFoundation
         public static MediaType GetMediaType(WaveFormat Wf)
         {
             var mediaType = new MediaType();
-            
+
             mediaType.Set(MediaTypeAttributeKeys.MajorType, MediaTypeGuids.Audio);
             mediaType.Set(MediaTypeAttributeKeys.AudioNumChannels, Wf.Channels);
             mediaType.Set(MediaTypeAttributeKeys.AudioBitsPerSample, Wf.BitsPerSample);
@@ -188,7 +188,7 @@ namespace Captura.Windows.MediaFoundation
 
                 Sample.SampleTime = _frameNumber * _frameDuration;
                 Sample.SampleDuration = _frameDuration;
-                
+
                 if (_first)
                 {
                     _writer.SendStreamTick(VideoStreamIndex, Sample.SampleTime);
@@ -219,8 +219,8 @@ namespace Captura.Windows.MediaFoundation
             lock (_syncLock)
             {
                 _disposed = true;
-                
-                const int noSamplesProcessedHResult = unchecked((int) 0xC00D4A44);
+
+                const int noSamplesProcessedHResult = unchecked((int)0xC00D4A44);
 
                 try
                 {

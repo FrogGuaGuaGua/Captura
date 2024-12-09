@@ -25,7 +25,7 @@ namespace Captura.Windows.MediaFoundation
             using (var audioTypeOut = MfWriter.GetMediaType(Wf))
             {
                 audioTypeOut.Set(MediaTypeAttributeKeys.Subtype, MediaSubtype);
-                
+
                 if (MediaSubtype == AudioFormatGuids.Aac)
                 {
                     audioTypeOut.Set(MediaTypeAttributeKeys.AudioAvgBytesPerSecond, MfWriter.GetAacBitrate(AudioQuality));

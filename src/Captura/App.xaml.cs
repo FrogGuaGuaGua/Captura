@@ -1,15 +1,15 @@
-﻿using FirstFloor.ModernUI.Presentation;
-using System;
-using System.IO;
-using System.Linq;
-using System.Windows;
-using System.Windows.Threading;
-using Captura.Loc;
+﻿using Captura.Loc;
 using Captura.Models;
 using Captura.MouseKeyHook;
 using Captura.ViewModels;
 using Captura.Views;
 using CommandLine;
+using FirstFloor.ModernUI.Presentation;
+using System;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace Captura
 {
@@ -24,7 +24,7 @@ namespace Captura
         }
 
         public static CmdOptions CmdOptions { get; private set; }
-        
+
         void App_OnDispatcherUnhandledException(object Sender, DispatcherUnhandledExceptionEventArgs Args)
         {
             var dir = Path.Combine(ServiceProvider.SettingsDir, "Crashes");

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using SharpDX;
+﻿using SharpDX;
 using SharpDX.DXGI;
+using System;
+using System.Threading.Tasks;
 
 namespace Captura.Windows.DesktopDuplication
 {

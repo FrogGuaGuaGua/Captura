@@ -1,8 +1,8 @@
-﻿using System;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Video;
 using SharpAvi.Codecs;
 using SharpAvi.Output;
+using System;
 using AviInternalWriter = SharpAvi.Output.AviWriter;
 
 namespace Captura.SharpAvi
@@ -19,7 +19,7 @@ namespace Captura.SharpAvi
         byte[] _videoBuffer;
         readonly AviCodec _codec;
         readonly object _syncLock = new object();
-        
+
         /// <summary>
         /// Gets whether Audio is recorded.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Captura.SharpAvi
             if (AudioProvider != null)
                 CreateAudioStream(AudioProvider);
         }
-        
+
         /// <summary>
         /// Writes an Image frame.
         /// </summary>

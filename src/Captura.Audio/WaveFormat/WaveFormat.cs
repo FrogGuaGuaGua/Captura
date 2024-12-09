@@ -58,7 +58,7 @@ namespace Captura.Audio
                 ExtraSize = 0
             };
         }
-        
+
         /// <summary>
         /// Returns the encoding type used
         /// </summary>

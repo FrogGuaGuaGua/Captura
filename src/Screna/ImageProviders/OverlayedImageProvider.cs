@@ -10,7 +10,7 @@ namespace Captura.Video
     {
         IOverlay[] _overlays;
         IImageProvider _imageProvider;
-        
+
         /// <summary>
         /// Creates a new instance of <see cref="OverlayedImageProvider"/>.
         /// </summary>
@@ -29,7 +29,7 @@ namespace Captura.Video
         public IEditableFrame Capture()
         {
             var bmp = _imageProvider.Capture();
-            
+
             // Overlays should have already been drawn on previous frame
             if (bmp is RepeatFrame)
             {
@@ -41,10 +41,10 @@ namespace Captura.Video
                 foreach (var overlay in _overlays)
                     overlay?.Draw(bmp, _imageProvider.PointTransform);
             }
-            
+
             return bmp;
         }
-        
+
         /// <inheritdoc />
         public int Height { get; }
 

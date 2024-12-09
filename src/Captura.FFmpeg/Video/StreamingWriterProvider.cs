@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿using Captura.Video;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Captura.Video;
 
 namespace Captura.FFmpeg
 {

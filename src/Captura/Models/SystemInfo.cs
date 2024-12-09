@@ -1,9 +1,9 @@
-﻿using System;
-using System.Management;
-using System.Text;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.ViewModels;
 using Captura.Webcam;
+using System;
+using System.Management;
+using System.Text;
 
 namespace Captura.Models
 {

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Models;
+using System;
 using System.Windows.Input;
-using Captura.Models;
 
 namespace Captura
 {
@@ -9,7 +9,7 @@ namespace Captura
         readonly Action<object> _execute;
         bool _canExecute;
         readonly SyncContextManager _syncContext = new SyncContextManager();
-        
+
         public DelegateCommand(Action<object> OnExecute, bool CanExecute = true)
         {
             _execute = OnExecute;

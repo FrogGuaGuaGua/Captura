@@ -15,7 +15,7 @@ namespace Captura.Native
         byte* _pBase;
         readonly int _width;
 
-        public UnsafeBitmap(Bitmap InputBitmap) 
+        public UnsafeBitmap(Bitmap InputBitmap)
         {
             _inputBitmap = InputBitmap;
 

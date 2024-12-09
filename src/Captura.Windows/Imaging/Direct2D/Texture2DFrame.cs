@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Captura.Native;
+using Captura.Windows.MediaFoundation;
+using SharpDX.Direct3D11;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Captura.Windows.MediaFoundation;
-using Captura.Native;
-using SharpDX.Direct3D11;
 using Device = SharpDX.Direct3D11.Device;
 using MapFlags = SharpDX.Direct3D11.MapFlags;
 

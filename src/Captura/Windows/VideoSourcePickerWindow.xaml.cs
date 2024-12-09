@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -8,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using Captura.Video;
 using Color = System.Windows.Media.Color;
 using Cursors = System.Windows.Input.Cursors;
 using HorizontalAlignment = System.Windows.HorizontalAlignment;
@@ -189,7 +189,7 @@ namespace Captura
                     SelectedWindow = _windows
                         .Where(M => Predicate?.Invoke(M) ?? true)
                         .FirstOrDefault(M => M.Rectangle.Contains(point));
-                    
+
                     UpdateBorderAndCursor(SelectedWindow?.Rectangle);
                     break;
             }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Interop;
-using Captura.Windows.DirectX;
+﻿using Captura.Windows.DirectX;
 using Captura.Windows.Gdi;
 using Reactive.Bindings.Extensions;
 using SharpDX.Direct3D9;
+using System;
+using System.Windows;
+using System.Windows.Interop;
 
 namespace Captura.Video
 {

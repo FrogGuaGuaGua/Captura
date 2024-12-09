@@ -6,12 +6,12 @@ namespace Captura.Video
     public class MousePointerOverlay : IOverlay
     {
         readonly MouseOverlaySettings _settings;
-        
+
         public MousePointerOverlay(MouseOverlaySettings Settings)
         {
             _settings = Settings;
         }
-        
+
         /// <summary>
         /// Draws overlay.
         /// </summary>

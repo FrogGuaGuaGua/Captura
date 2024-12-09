@@ -24,7 +24,7 @@ namespace Captura.Video
 
             _regionAroundMouse = new Rectangle(0, 0, Width, Height);
 
-            PointTransform = P => new Point(P.X - _regionAroundMouse.X, P.Y - _regionAroundMouse.Y);            
+            PointTransform = P => new Point(P.X - _regionAroundMouse.X, P.Y - _regionAroundMouse.Y);
 
             _regionProvider = PlatformServices.GetRegionProvider(_regionAroundMouse,
                 IncludeCursor,

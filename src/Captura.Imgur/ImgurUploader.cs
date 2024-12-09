@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Captura.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Captura.Models;
-using Newtonsoft.Json;
 
 namespace Captura.Imgur
 {

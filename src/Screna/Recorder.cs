@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Captura.Audio;
+using Captura.Models;
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Captura.Audio;
-using Captura.Models;
 
 // ReSharper disable MethodSupportsCancellation
 
@@ -73,12 +73,12 @@ namespace Captura.Video
             {
                 var wf = AudioProvider.WaveFormat;
 
-                _audioBytesPerFrame = (int) ((1.0 / FrameRate)
+                _audioBytesPerFrame = (int)((1.0 / FrameRate)
                                              * wf.SampleRate
                                              * wf.Channels
                                              * (wf.BitsPerSample / 8.0));
 
-                _audioChunkBytes = (int) (_audioBytesPerFrame * (FrameRate * AudioChunkLengthMs / 1000.0));
+                _audioChunkBytes = (int)(_audioBytesPerFrame * (FrameRate * AudioChunkLengthMs / 1000.0));
             }
             else _audioProvider = null;
 
@@ -246,7 +246,7 @@ namespace Captura.Video
             {
                 return;
             }
-            
+
             // Reallocate silence buffer: An array of zeros.
             if (_silenceBuffer == null || _silenceBuffer.Length < silenceToWrite)
             {
@@ -344,7 +344,7 @@ namespace Captura.Video
             _sw?.Start();
 
             _audioProvider?.Start();
-            
+
             _continueCapturing?.Set();
         }
 

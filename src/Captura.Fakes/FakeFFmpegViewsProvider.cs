@@ -1,5 +1,5 @@
-﻿using System;
-using Captura.FFmpeg;
+﻿using Captura.FFmpeg;
+using System;
 
 namespace Captura.Fakes
 {

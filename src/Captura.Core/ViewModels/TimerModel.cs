@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Models;
+using System;
 using System.Timers;
-using Captura.Models;
 
 namespace Captura.ViewModels
 {

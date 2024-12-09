@@ -1,7 +1,7 @@
-﻿using System;
+﻿using DirectShowLib;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using DirectShowLib;
 
 // ReSharper disable SuspiciousTypeConversion.Global
 
@@ -271,7 +271,7 @@ namespace Captura.Webcam
                     med = MediaType.Video;
                     _captureGraphBuilder.FindInterface(cat, med, _videoDeviceFilter, iid, out _);
                 }
-                
+
                 // Retreive the media control interface (for starting/stopping graph)
                 _mediaControl = (IMediaControl)_graphBuilder;
 
@@ -315,7 +315,7 @@ namespace Captura.Webcam
                 _videoWindow = null;
             }
 
-            if ((int) _actualGraphState < (int) GraphState.Rendered)
+            if ((int)_actualGraphState < (int)GraphState.Rendered)
                 return;
 
             // Update the state

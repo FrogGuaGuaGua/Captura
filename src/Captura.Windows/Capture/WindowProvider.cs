@@ -1,8 +1,8 @@
-﻿using System;
-using System.Drawing;
-using Captura.Native;
+﻿using Captura.Native;
 using Captura.Windows;
 using Captura.Windows.Gdi;
+using System;
+using System.Drawing;
 
 namespace Captura.Video
 {
@@ -24,13 +24,13 @@ namespace Captura.Video
             return P =>
             {
                 var rect = Window.Rectangle;
-                
+
                 var ratio = Math.Min((float)initialSize.Width / rect.Width, (float)initialSize.Height / rect.Height);
 
                 return new Point((int)((P.X - rect.X) * ratio), (int)((P.Y - rect.Y) * ratio));
             };
         }
-        
+
         /// <summary>
         /// Creates a new instance of <see cref="WindowProvider"/>.
         /// </summary>
@@ -64,10 +64,10 @@ namespace Captura.Video
             }
 
             var rect = _window.Rectangle.Even();
-            var ratio = Math.Min((float) Width / rect.Width, (float) Height / rect.Height);
+            var ratio = Math.Min((float)Width / rect.Width, (float)Height / rect.Height);
 
-            var resizeWidth = (int) (rect.Width * ratio);
-            var resizeHeight = (int) (rect.Height * ratio);
+            var resizeWidth = (int)(rect.Width * ratio);
+            var resizeHeight = (int)(rect.Height * ratio);
 
             var hdcDest = _dcTarget.GetDC();
 
@@ -97,7 +97,7 @@ namespace Captura.Video
 
             Gdi32.StretchBlt(hdcDest, 0, 0, resizeWidth, resizeHeight,
                 _hdcSrc, rect.X, rect.Y, rect.Width, rect.Height,
-                (int) CopyPixelOperation.SourceCopy);
+                (int)CopyPixelOperation.SourceCopy);
 
             if (_includeCursor)
                 MouseCursor.Draw(hdcDest, PointTransform);

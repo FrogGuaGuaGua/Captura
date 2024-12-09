@@ -8,7 +8,7 @@ namespace Captura.FFmpeg
     {
         readonly Process _ffmpegProcess;
         readonly Stream _ffmpegIn;
-        
+
         public FFmpegAudioWriter(string FileName, int AudioQuality, FFmpegAudioArgsProvider AudioArgsProvider, int Frequency = 44100, int Channels = 2)
         {
             if (!FFmpegService.FFmpegExists)
@@ -16,7 +16,7 @@ namespace Captura.FFmpeg
                 throw new FFmpegNotFoundException();
             }
 
-            var argsBuilder  = new FFmpegArgsBuilder();
+            var argsBuilder = new FFmpegArgsBuilder();
 
             argsBuilder.AddStdIn()
                 .SetFormat("s16le")
@@ -30,7 +30,7 @@ namespace Captura.FFmpeg
             AudioArgsProvider(AudioQuality, output);
 
             _ffmpegProcess = FFmpegService.StartFFmpeg(argsBuilder.GetArgs(), FileName, out _);
-            
+
             _ffmpegIn = _ffmpegProcess.StandardInput.BaseStream;
         }
 

@@ -1,8 +1,8 @@
-﻿using System;
-using SharpDX;
+﻿using SharpDX;
 using SharpDX.Direct2D1;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
+using System;
 using AlphaMode = SharpDX.Direct2D1.AlphaMode;
 
 namespace Captura.Windows.DesktopDuplication

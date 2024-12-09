@@ -1,6 +1,6 @@
+using Captura.Loc;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Captura.Loc;
 
 namespace Captura.Video
 {

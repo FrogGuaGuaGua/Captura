@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using NAudio.Wave;
+﻿using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Captura.Audio
 {

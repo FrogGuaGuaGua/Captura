@@ -1,8 +1,8 @@
-﻿using SharpDX.DXGI;
+﻿using Captura.Video;
+using Captura.Windows.DirectX;
+using SharpDX.DXGI;
 using System;
 using System.Drawing;
-using Captura.Video;
-using Captura.Windows.DirectX;
 
 namespace Captura.Windows.DesktopDuplication
 {
@@ -27,7 +27,7 @@ namespace Captura.Windows.DesktopDuplication
         public int Width { get; }
 
         public Func<Point, Point> PointTransform { get; }
-        
+
         public IEditableFrame Capture()
         {
             return _dupl.Capture();

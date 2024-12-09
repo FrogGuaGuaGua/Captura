@@ -1,9 +1,9 @@
-﻿using System.Runtime.InteropServices;
-using Captura.Windows.DirectX;
+﻿using Captura.Windows.DirectX;
 using SharpDX;
 using SharpDX.Direct2D1;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
+using System.Runtime.InteropServices;
 using AlphaMode = SharpDX.Direct2D1.AlphaMode;
 using MapFlags = SharpDX.Direct3D11.MapFlags;
 

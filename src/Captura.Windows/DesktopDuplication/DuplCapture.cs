@@ -1,7 +1,7 @@
-﻿using System;
-using SharpDX;
+﻿using SharpDX;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
+using System;
 using Device = SharpDX.Direct3D11.Device;
 using ResultCode = SharpDX.DXGI.ResultCode;
 

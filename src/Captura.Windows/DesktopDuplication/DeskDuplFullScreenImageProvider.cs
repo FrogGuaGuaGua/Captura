@@ -1,7 +1,7 @@
-﻿using System;
-using System.Drawing;
-using Captura.Video;
+﻿using Captura.Video;
 using Captura.Windows.DirectX;
+using System;
+using System.Drawing;
 
 namespace Captura.Windows.DesktopDuplication
 {
@@ -21,7 +21,7 @@ namespace Captura.Windows.DesktopDuplication
         public int Width => _dupl.Width;
 
         public Func<Point, Point> PointTransform => _dupl.PointTransform;
-        
+
         public IEditableFrame Capture()
         {
             return _dupl.Capture();

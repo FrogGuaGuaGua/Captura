@@ -12,12 +12,12 @@ namespace Captura.Video
         /// </summary>
         /// <param name="Image">The Image frame to write.</param>
         void WriteFrame(IBitmapFrame Image);
-        
+
         /// <summary>
         /// Gets whether audio is supported.
         /// </summary>
         bool SupportsAudio { get; }
-                
+
         /// <summary>
         /// Write audio block to Audio Stream.
         /// </summary>

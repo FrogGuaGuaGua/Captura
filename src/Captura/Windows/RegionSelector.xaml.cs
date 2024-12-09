@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Captura.ViewModels;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
-using Captura.ViewModels;
 using Color = System.Windows.Media.Color;
 using Cursors = System.Windows.Input.Cursors;
 

@@ -8,7 +8,7 @@ namespace Captura
     {
         public override object Convert(object Value, Type TargetType, object Parameter, CultureInfo Culture)
         {
-            switch(Value)
+            switch (Value)
             {
                 case RecorderState.Recording:
                     return "/Images/record.ico";

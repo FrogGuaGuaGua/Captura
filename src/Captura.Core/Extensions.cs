@@ -1,10 +1,10 @@
-﻿using System;
-using DSize = System.Drawing.Size;
-using WSize = System.Windows.Size;
+﻿using Captura.Loc;
+using Captura.Models;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Captura.Loc;
-using Captura.Models;
+using DSize = System.Drawing.Size;
+using WSize = System.Windows.Size;
 
 namespace Captura
 {

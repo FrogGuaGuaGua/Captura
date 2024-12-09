@@ -1,11 +1,11 @@
-﻿using System.Reactive.Linq;
-using System.Windows;
-using Captura.FFmpeg;
+﻿using Captura.FFmpeg;
 using Captura.Models;
 using Captura.Video;
 using Captura.Webcam;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
+using System.Reactive.Linq;
+using System.Windows;
 
 namespace Captura.ViewModels
 {

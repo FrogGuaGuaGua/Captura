@@ -1,11 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using Captura.Models;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Windows.Input;
-using Captura.Models;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 
 namespace Captura.ViewModels
 {

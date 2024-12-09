@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
-using System;
 
 namespace Captura
 {
@@ -25,7 +25,7 @@ namespace Captura
         public event Action RemoveRequested;
 
         void CloseButton_Click(object Sender, RoutedEventArgs E) => OnClose();
-        
+
         void TextBlock_MouseUp(object Sender, MouseButtonEventArgs E)
         {
             Notification.RaiseClick();

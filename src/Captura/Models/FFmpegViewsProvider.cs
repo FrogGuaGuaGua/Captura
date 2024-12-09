@@ -1,9 +1,9 @@
-﻿using System.Windows;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Loc;
 using Captura.Models;
 using Captura.Views;
 using FirstFloor.ModernUI.Windows.Controls;
+using System.Windows;
 
 namespace Captura.FFmpeg
 {

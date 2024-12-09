@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using Captura.Models;
+using System.IO;
 using System.Linq;
-using Captura.Models;
 
 namespace Captura.ViewModels
 {

@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Captura.MouseKeyHook;
+using Captura.Video;
+using Captura.ViewModels;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -10,11 +15,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using Captura.MouseKeyHook;
-using Captura.Video;
-using Captura.ViewModels;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 using Color = System.Windows.Media.Color;
 using Point = System.Windows.Point;
 
@@ -296,7 +296,7 @@ namespace Captura
             }
 
             Update();
-            
+
             Settings.PropertyChanged += (S, E) => Dispatcher.Invoke(Update);
         }
 
@@ -333,7 +333,7 @@ namespace Captura
 
                 case MouseButton.Right:
                     return settings.Clicks.RightClickColor.ToWpfColor();
-                    
+
                 default:
                     return settings.Clicks.Color.ToWpfColor();
             }

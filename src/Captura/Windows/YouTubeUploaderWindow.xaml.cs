@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using Captura.ViewModels;
+﻿using Captura.ViewModels;
+using System.Windows;
 
 namespace Captura
 {

@@ -1,10 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using Captura.Video;
+using Captura.ViewModels;
+using Reactive.Bindings;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using Captura.Video;
-using Captura.ViewModels;
-using Reactive.Bindings;
 
 namespace Captura
 {

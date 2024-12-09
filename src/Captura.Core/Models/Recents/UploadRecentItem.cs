@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Captura.Loc;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
-using Captura.Loc;
 
 namespace Captura.Models
 {

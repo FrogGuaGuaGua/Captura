@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Captura.FFmpeg;
+using Captura.Models;
+using Reactive.Bindings;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Captura.FFmpeg;
-using Captura.Models;
-using Reactive.Bindings;
 
 namespace Captura.ViewModels
 {

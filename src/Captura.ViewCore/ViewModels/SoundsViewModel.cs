@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Captura.ViewModels
 {

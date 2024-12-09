@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Reactive.Bindings;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Reactive.Bindings;
 using Color = System.Windows.Media.Color;
 
 // ReSharper disable MemberCanBePrivate.Global
@@ -138,11 +138,11 @@ namespace Captura.ViewModels
 
         public void ResizeFromTop(double VerticalChangeDip)
         {
-            var verticalChange = (int) (VerticalChangeDip * Dpi.Y);
+            var verticalChange = (int)(VerticalChangeDip * Dpi.Y);
 
             var oldBottom = Top + Height;
             var top = Top + verticalChange;
-            
+
             if (top <= 0)
             {
                 Top = 0;
@@ -166,7 +166,7 @@ namespace Captura.ViewModels
 
         public void ResizeFromLeft(double HorizontalChangeDip)
         {
-            var horizontalChange = (int) (HorizontalChangeDip * Dpi.X);
+            var horizontalChange = (int)(HorizontalChangeDip * Dpi.X);
 
             var oldRight = Left + Width;
             var left = Left + horizontalChange;

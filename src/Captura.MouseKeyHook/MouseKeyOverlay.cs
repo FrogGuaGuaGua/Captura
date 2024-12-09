@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Drawing;
 using System.IO;
-using Captura.Video;
 
 namespace Captura.MouseKeyHook
 {
@@ -20,7 +20,7 @@ namespace Captura.MouseKeyHook
         readonly KeymapViewModel _keymap;
         readonly TextWriter _textWriter;
         #endregion
-        
+
         /// <summary>
         /// Creates a new instance of <see cref="MouseKeyHook"/>.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Captura.MouseKeyHook
 
             return textWriter;
         }
-        
+
         /// <summary>
         /// Draws overlay.
         /// </summary>

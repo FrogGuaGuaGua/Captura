@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Captura.FFmpeg;
+using Reactive.Bindings;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using Captura.FFmpeg;
-using Reactive.Bindings;
 
 namespace Captura.ViewModels
 {

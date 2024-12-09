@@ -1,16 +1,16 @@
-﻿using System;
-using System.Drawing;
-using System.Reactive.Linq;
-using WSize = System.Windows.Size;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Interop;
-using Captura.ViewModels;
+﻿using Captura.ViewModels;
 using Captura.Webcam;
 using Captura.Windows.Gdi;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
+using System;
+using System.Drawing;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Interop;
 using Xceed.Wpf.Toolkit.Core.Utilities;
+using WSize = System.Windows.Size;
 
 namespace Captura
 {

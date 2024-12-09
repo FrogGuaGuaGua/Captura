@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.Views;
+using System;
 using System.Diagnostics;
 using System.Windows;
-using Captura.Views;
 
 namespace Captura.Models
 {

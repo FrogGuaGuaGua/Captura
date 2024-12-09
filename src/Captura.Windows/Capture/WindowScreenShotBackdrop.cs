@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.Native;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Captura.Native;
 
 namespace Captura.Video
 {

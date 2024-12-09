@@ -1,8 +1,8 @@
-﻿using System.Windows;
+﻿using Captura.Hotkeys;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
-using Captura.Hotkeys;
 using Button = System.Windows.Controls.Button;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
@@ -40,13 +40,13 @@ namespace Captura
 
         public Hotkey HotkeyModel
         {
-            get => (Hotkey) GetValue(HotkeyModelProperty);
+            get => (Hotkey)GetValue(HotkeyModelProperty);
             set => SetValue(HotkeyModelProperty, value);
         }
 
         void HotkeyEdited(Key NewKey, Modifiers NewModifiers)
         {
-            HotkeyEdited((Keys) KeyInterop.VirtualKeyFromKey(NewKey), NewModifiers);
+            HotkeyEdited((Keys)KeyInterop.VirtualKeyFromKey(NewKey), NewModifiers);
         }
 
         void TextColor()
@@ -76,7 +76,7 @@ namespace Captura
 
             _editing = false;
         }
-        
+
         protected override void OnClick()
         {
             base.OnClick();

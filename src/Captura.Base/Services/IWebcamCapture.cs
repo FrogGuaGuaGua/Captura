@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Drawing;
-using Captura.Video;
 
 namespace Captura.Webcam
 {

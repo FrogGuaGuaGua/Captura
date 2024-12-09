@@ -1,5 +1,5 @@
-﻿using System.IO;
-using SharpDX.Direct2D1;
+﻿using SharpDX.Direct2D1;
+using System.IO;
 
 namespace Captura.Windows.DirectX
 {

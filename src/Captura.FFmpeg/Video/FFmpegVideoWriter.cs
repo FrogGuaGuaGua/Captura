@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Diagnostics;
 using System.IO.Pipes;
 using System.Threading;
 using System.Threading.Tasks;
-using Captura.Video;
 
 namespace Captura.FFmpeg
 {
@@ -62,7 +62,7 @@ namespace Captura.FFmpeg
                 .SetFrameRate(Args.FrameRate);
 
             Args.VideoCodec.Apply(settings, Args, output);
-            
+
             if (settings.Resize)
             {
                 var width = settings.ResizeWidth;
@@ -147,7 +147,7 @@ namespace Captura.FFmpeg
 
             if (_ffmpegProcess.HasExited)
             {
-                throw new FFmpegException( _ffmpegProcess.ExitCode);
+                throw new FFmpegException(_ffmpegProcess.ExitCode);
             }
 
             if (_firstAudio)
@@ -208,7 +208,7 @@ namespace Captura.FFmpeg
                 Frame.Dispose();
                 throw new FFmpegException(_ffmpegProcess.ExitCode);
             }
-            
+
             if (_firstFrame)
             {
                 if (!_ffmpegIn.WaitForConnection(5000))
@@ -244,7 +244,7 @@ namespace Captura.FFmpeg
                 _frameStreak = 0;
                 return;
             }
-            
+
             // Most of the drops happen in beginning of video, once that stops, sync can be done.
             if (!_initialStability)
             {

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Captura.Native;
+using Captura.Video;
+using Captura.Windows.DesktopDuplication;
+using SharpDX.DXGI;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Captura.Native;
-using Captura.Video;
-using Captura.Windows.DesktopDuplication;
-using SharpDX.DXGI;
 
 namespace Captura.Windows
 {

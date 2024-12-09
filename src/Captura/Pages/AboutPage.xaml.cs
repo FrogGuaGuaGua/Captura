@@ -1,6 +1,6 @@
-﻿using System.Windows;
-using Captura.Views;
+﻿using Captura.Views;
 using Microsoft.Win32;
+using System.Windows;
 
 namespace Captura
 {

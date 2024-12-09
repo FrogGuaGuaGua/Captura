@@ -46,9 +46,9 @@ namespace Captura.MouseKeyHook
         public bool Control { get; }
         public bool Shift { get; }
         public bool Alt { get; }
-        
+
         public string Display { get; }
-        
+
         string Modifiers
         {
             get

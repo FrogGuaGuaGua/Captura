@@ -17,7 +17,7 @@ namespace Captura
 
         public string SelectedFont
         {
-            get => (string) GetValue(SelectedFontProperty);
+            get => (string)GetValue(SelectedFontProperty);
             set => SetValue(SelectedFontProperty, value);
         }
     }

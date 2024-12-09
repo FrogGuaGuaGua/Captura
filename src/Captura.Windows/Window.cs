@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Captura.Native;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using Captura.Native;
 
 namespace Captura.Video
 {
@@ -164,7 +164,7 @@ namespace Captura.Video
         /// </returns>
         /// <param name="Obj">The object to compare with the current object. </param>
         public override bool Equals(object Obj) => Obj is Window w && w.Handle == Handle;
-        
+
         /// <summary>
         /// Serves as the default hash function. 
         /// </summary>

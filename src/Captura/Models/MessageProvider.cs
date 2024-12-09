@@ -1,11 +1,11 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Loc;
 using Captura.Views;
 using FirstFloor.ModernUI.Windows.Controls;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Captura.Models
 {

@@ -83,24 +83,24 @@ namespace Captura.FFmpeg
                 },
                 EnableRaisingEvents = true
             };
-            
+
             var log = ServiceProvider.Get<IFFmpegLogRepository>();
 
             var logItem = log.CreateNew(Path.GetFileName(FileName), Arguments);
             FFmpegLog = logItem;
-                        
+
             process.ErrorDataReceived += (S, E) => logItem.Write(E.Data);
 
             process.Start();
 
             process.BeginErrorReadLine();
-            
+
             return process;
         }
 
         public static bool WaitForConnection(this NamedPipeServerStream ServerStream, int Timeout)
         {
-            var asyncResult = ServerStream.BeginWaitForConnection(Ar => {}, null);
+            var asyncResult = ServerStream.BeginWaitForConnection(Ar => { }, null);
 
             if (asyncResult.AsyncWaitHandle.WaitOne(Timeout))
             {

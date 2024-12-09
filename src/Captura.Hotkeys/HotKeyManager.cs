@@ -1,10 +1,10 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace Captura.Hotkeys
 {
@@ -100,7 +100,7 @@ namespace Captura.Hotkeys
                 new HotkeyModel(ServiceName.DesktopScreenShot, Keys.PrintScreen, Modifiers.Shift, true)
             };
         }
-        
+
         void ProcessHotkey(int Id)
         {
             var hotkey = Hotkeys.SingleOrDefault(H => H.Id == Id);
@@ -115,7 +115,7 @@ namespace Captura.Hotkeys
         }
 
         event Action<ServiceName> HotkeyPressed;
-        
+
         public void Dispose()
         {
             var models = Hotkeys.Select(M =>

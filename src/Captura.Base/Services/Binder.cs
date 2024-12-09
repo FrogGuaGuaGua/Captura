@@ -1,5 +1,5 @@
-using System;
 using Ninject.Modules;
+using System;
 
 namespace Captura
 {

@@ -21,7 +21,7 @@ namespace Captura.SharpAvi
             this.FourCC = FourCC;
             this.Name = Name;
         }
-        
+
         /// <summary>
         /// Quality of the encoded Video... 0 to 100 (default is 70) (Not supported by all Codecs). 
         /// </summary>

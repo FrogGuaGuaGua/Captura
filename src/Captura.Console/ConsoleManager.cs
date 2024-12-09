@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Models;
 using Captura.SharpAvi;
@@ -14,6 +6,14 @@ using Captura.Video;
 using Captura.ViewModels;
 using Captura.Webcam;
 using Captura.Windows;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Console;
 
 namespace Captura

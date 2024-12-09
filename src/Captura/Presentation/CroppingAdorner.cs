@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Shapes;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -7,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using Point = System.Drawing.Point;
 
 namespace Captura
@@ -43,7 +43,7 @@ namespace Captura
         // To store and manage the adorner's visual children.
         readonly VisualCollection _vc;
         #endregion
-        
+
         #region Routed Events
         public static readonly RoutedEvent CropChangedEvent = EventManager.RegisterRoutedEvent(
             nameof(CropChanged),
@@ -82,7 +82,7 @@ namespace Captura
         static CroppingAdorner()
         {
             var clr = Colors.Red;
-            
+
             clr.A = 80;
             FillProperty.OverrideMetadata(typeof(CroppingAdorner),
                 new PropertyMetadata(
@@ -108,7 +108,7 @@ namespace Captura
             };
 
             _vc.Add(_cnvThumbs);
-            
+
             _crtMove = new Thumb
             {
                 Cursor = Cursors.Hand,
@@ -147,7 +147,7 @@ namespace Captura
             _cnvThumbs.Children.Add(_checkButton);
 
             btn.Click += (S, E) => Checked?.Invoke();
-            
+
             // Add handlers for Cropping.
             _crtBottomLeft.DragDelta += (S, E) => HandleDrag(S, E, 1, 0, -1, 1);
             _crtBottomRight.DragDelta += (S, E) => HandleDrag(S, E, 0, 0, 1, 1);
@@ -242,21 +242,21 @@ namespace Captura
             }
         }
         #endregion
-        
+
         void AdornedElement_SizeChanged(object Sender, SizeChangedEventArgs E)
         {
             var ratio = E.NewSize.Width / E.PreviousSize.Width;
 
             var rcInterior = _prCropMask.RectInterior;
-            
+
             double intLeft = rcInterior.Left * ratio,
                 intTop = rcInterior.Top * ratio,
                 intWidth = rcInterior.Width * ratio,
                 intHeight = rcInterior.Height * ratio;
-            
+
             _prCropMask.RectInterior = new Rect(intLeft, intTop, intWidth, intHeight);
         }
-        
+
         #region Arranging/positioning
         void SetThumbs(Rect Rect)
         {
@@ -307,7 +307,7 @@ namespace Captura
             }
 
             var pxFromSize = ToPoint(rcInterior.Width, rcInterior.Height);
-            
+
             var pxFromPos = ToPoint(rcInterior.Left, rcInterior.Top);
             var pxWhole = ToPoint(AdornedElement.RenderSize.Width, AdornedElement.RenderSize.Height);
 
@@ -323,7 +323,7 @@ namespace Captura
 
             return new CroppedBitmap(Bmp, rcFrom);
         }
-        
+
         void BuildCorner(ref CropThumb Thumb, Cursor CustomCursor)
         {
             if (Thumb != null)
@@ -344,7 +344,7 @@ namespace Captura
 
         protected override Visual GetVisualChild(int Index) => _vc[Index];
         #endregion
-        
+
         class CropThumb : Thumb
         {
             readonly int _width;
@@ -353,7 +353,7 @@ namespace Captura
             {
                 _width = Width;
             }
-            
+
             protected override Visual GetVisualChild(int Index) => null;
 
             protected override void OnRender(DrawingContext DrawingContext)

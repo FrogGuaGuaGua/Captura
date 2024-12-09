@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using Captura.FFmpeg;
+using System.Collections;
 using System.Collections.Generic;
-using Captura.FFmpeg;
 
 namespace Captura.Fakes
 {

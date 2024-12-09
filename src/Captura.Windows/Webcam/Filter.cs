@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DirectShowLib;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using DirectShowLib;
 
 namespace Captura.Webcam
 {

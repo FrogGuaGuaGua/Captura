@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using Captura.ViewModels;
+using System.Windows;
 using System.Windows.Input;
-using Captura.ViewModels;
 
 namespace Captura
 {

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Drawing;
-using Captura.Native;
+﻿using Captura.Native;
 using Captura.Windows;
 using Captura.Windows.Gdi;
+using System;
+using System.Drawing;
 
 namespace Captura.Video
 {
@@ -29,7 +29,7 @@ namespace Captura.Video
             Width = _region.Width;
             if (Width % 2 == 1)
                 ++Width;
-            
+
             Height = _region.Height;
             if (Height % 2 == 1)
                 ++Height;
@@ -49,7 +49,7 @@ namespace Captura.Video
         {
             _dcTarget.Dispose();
 
-            User32.ReleaseDC(IntPtr.Zero, _hdcSrc);            
+            User32.ReleaseDC(IntPtr.Zero, _hdcSrc);
         }
 
         public IEditableFrame Capture()
@@ -61,7 +61,7 @@ namespace Captura.Video
 
             Gdi32.BitBlt(hdcDest, 0, 0, _region.Width, _region.Height,
                 _hdcSrc, _region.X, _region.Y,
-                (int) CopyPixelOperation.SourceCopy);
+                (int)CopyPixelOperation.SourceCopy);
 
             if (_includeCursor)
                 MouseCursor.Draw(hdcDest, PointTransform);

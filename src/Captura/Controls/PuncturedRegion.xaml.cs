@@ -18,8 +18,8 @@ namespace Captura
 
         static void RegionChanged(DependencyObject Obj, DependencyPropertyChangedEventArgs E)
         {
-             if (Obj is PuncturedRegion r)
-             {
+            if (Obj is PuncturedRegion r)
+            {
                 switch (E.NewValue)
                 {
                     case null:
@@ -50,7 +50,7 @@ namespace Captura
                         r.Visibility = Visibility.Visible;
                         break;
                 }
-             }
+            }
         }
 
         public PuncturedRegion()

@@ -1,9 +1,9 @@
-﻿using Captura.Models;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Hotkeys;
 using Captura.Imgur;
 using Captura.Loc;
+using Captura.Models;
 using Captura.MouseKeyHook;
 using Captura.SharpAvi;
 using Captura.Video;

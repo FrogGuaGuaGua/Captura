@@ -72,16 +72,16 @@ namespace Captura
             if (!(AdornedElement is FrameworkElement fel))
                 return;
 
-            var offsetX = (int) Args.HorizontalChange;
-            var offsetY = (int) Args.VerticalChange;
+            var offsetX = (int)Args.HorizontalChange;
+            var offsetY = (int)Args.VerticalChange;
 
             var har = fel.HorizontalAlignment == HorizontalAlignment.Right;
             var vab = fel.VerticalAlignment == VerticalAlignment.Bottom;
 
             var newX = (int)(har ? fel.Margin.Right : fel.Margin.Left);
             var newY = (int)(vab ? fel.Margin.Bottom : fel.Margin.Top);
-            var newWidth = (int) fel.ActualWidth;
-            var newHeight = (int) fel.ActualHeight;
+            var newWidth = (int)fel.ActualWidth;
+            var newHeight = (int)fel.ActualHeight;
 
             void ModifyX(bool Possitive)
             {
@@ -272,7 +272,7 @@ namespace Captura
         }
 
         public event Action<Rect> PositionUpdated;
-        
+
         void BuildAdornerThumb(ref Thumb CornerThumb, Cursor CustomizedCursors)
         {
             if (CornerThumb != null)

@@ -1,7 +1,7 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
+﻿using Captura.Audio;
+using Hardcodet.Wpf.TaskbarNotification;
 using System;
 using System.Windows.Controls.Primitives;
-using Captura.Audio;
 
 namespace Captura.Models
 {

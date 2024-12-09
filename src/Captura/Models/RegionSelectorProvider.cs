@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.ViewModels;
+using System;
 using System.Drawing;
 using System.Windows;
-using Captura.ViewModels;
 
 namespace Captura.Video
 {

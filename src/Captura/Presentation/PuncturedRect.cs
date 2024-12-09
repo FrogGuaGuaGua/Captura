@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Windows.Shapes;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Captura
 {
@@ -43,7 +43,7 @@ namespace Captura
             get => (Rect)GetValue(RectInteriorProperty);
             set => SetValue(RectInteriorProperty, value);
         }
-        
+
         public static readonly DependencyProperty RectExteriorProperty =
             DependencyProperty.Register(
                 nameof(RectExterior),
@@ -65,7 +65,7 @@ namespace Captura
             get => (Rect)GetValue(RectExteriorProperty);
             set => SetValue(RectExteriorProperty, value);
         }
-        
+
         public PuncturedRect() : this(new Rect(0, 0, double.MaxValue, double.MaxValue), new Rect()) { }
 
         public PuncturedRect(Rect RectExterior, Rect RectInterior)
@@ -73,13 +73,13 @@ namespace Captura
             this.RectInterior = RectInterior;
             this.RectExterior = RectExterior;
         }
-        
+
         protected override Geometry DefiningGeometry
         {
             get
             {
                 var pthgExt = new PathGeometry();
-                var pthfExt = new PathFigure {StartPoint = RectExterior.TopLeft};
+                var pthfExt = new PathFigure { StartPoint = RectExterior.TopLeft };
                 pthfExt.Segments.Add(new LineSegment(RectExterior.TopRight, false));
                 pthfExt.Segments.Add(new LineSegment(RectExterior.BottomRight, false));
                 pthfExt.Segments.Add(new LineSegment(RectExterior.BottomLeft, false));
@@ -88,7 +88,7 @@ namespace Captura
 
                 var rectIntSect = Rect.Intersect(RectExterior, RectInterior);
                 var pthgInt = new PathGeometry();
-                var pthfInt = new PathFigure {StartPoint = rectIntSect.TopLeft};
+                var pthfInt = new PathFigure { StartPoint = rectIntSect.TopLeft };
                 pthfInt.Segments.Add(new LineSegment(rectIntSect.TopRight, false));
                 pthfInt.Segments.Add(new LineSegment(rectIntSect.BottomRight, false));
                 pthfInt.Segments.Add(new LineSegment(rectIntSect.BottomLeft, false));

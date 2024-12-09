@@ -1,8 +1,8 @@
 ﻿using Captura.Audio;
-using System.Linq;
 using Captura.FFmpeg;
 using Captura.SharpAvi;
 using Captura.Webcam;
+using System.Linq;
 using static System.Console;
 
 namespace Captura

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Captura.Fakes;
+﻿using Captura.Fakes;
 using Captura.Native;
 using CommandLine;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using static System.Console;
 // ReSharper disable LocalizableElement
 

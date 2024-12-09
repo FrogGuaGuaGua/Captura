@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading;
 using System.Threading.Tasks;
-using Captura.Video;
 
 namespace Captura.MouseKeyHook.Steps
 {
@@ -63,7 +63,7 @@ namespace Captura.MouseKeyHook.Steps
                 OnNext(step);
             };
 
-            Hook.MouseDragStarted += (S, E) => 
+            Hook.MouseDragStarted += (S, E) =>
             {
                 var step = new MouseDragBeginStep(E.Location,
                     _mouseClickSettings,

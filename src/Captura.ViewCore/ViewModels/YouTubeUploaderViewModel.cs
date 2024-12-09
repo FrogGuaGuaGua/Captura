@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using Captura.Models;
+using Captura.YouTube;
+using Google.Apis.Upload;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Captura.Models;
-using Captura.YouTube;
-using Google.Apis.Upload;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 
 namespace Captura.ViewModels
 {

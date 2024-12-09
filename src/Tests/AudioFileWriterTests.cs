@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Audio;
+using System;
 using System.IO;
-using Captura.Audio;
 using Xunit;
 
 namespace Captura.Tests

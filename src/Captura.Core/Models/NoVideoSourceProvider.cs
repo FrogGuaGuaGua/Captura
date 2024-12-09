@@ -1,7 +1,7 @@
 using Captura.Audio;
+using Captura.Loc;
 using System.Collections.Generic;
 using System.Linq;
-using Captura.Loc;
 
 namespace Captura.Video
 {
@@ -34,7 +34,7 @@ namespace Captura.Video
             set
             {
                 _selectedSource = value;
-                
+
                 OnPropertyChanged();
 
                 RaisePropertyChanged(nameof(Source));

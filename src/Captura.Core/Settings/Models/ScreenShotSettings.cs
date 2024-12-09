@@ -10,7 +10,7 @@
 
         public string[] SaveTargets
         {
-            get => Get(new []{ "Disk" });
+            get => Get(new[] { "Disk" });
             set => Set(value);
         }
 

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using Newtonsoft.Json.Linq;
 
 namespace Captura.Loc
 {
@@ -11,7 +11,7 @@ namespace Captura.Loc
         readonly JObject _defaultLanguage;
         JObject _currentLanguage;
         readonly string _langDir;
-        
+
         public static LanguageManager Instance { get; } = new LanguageManager();
 
         LanguageManager()
@@ -23,7 +23,7 @@ namespace Captura.Loc
             if (appDir != null)
             {
                 _langDir = Path.Combine(appDir, "Languages");
-                
+
                 if (Directory.Exists(_langDir))
                 {
                     foreach (var file in Directory.EnumerateFiles(_langDir, "*.json"))

@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Captura.Video;
+using System.Collections.Generic;
 
 namespace Captura.ViewModels
 {

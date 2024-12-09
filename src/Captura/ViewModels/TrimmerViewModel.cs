@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Captura.FFmpeg;
+using Microsoft.Win32;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System;
 using System.IO;
 using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Captura.FFmpeg;
-using Microsoft.Win32;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 
 namespace Captura
 {
@@ -91,7 +91,7 @@ namespace Captura
         }
 
         TimeSpan _from, _to, _end;
-        
+
         public TimeSpan From
         {
             get => _from;

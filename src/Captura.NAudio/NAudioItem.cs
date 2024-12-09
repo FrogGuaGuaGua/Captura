@@ -1,6 +1,6 @@
-﻿using System;
-using NAudio.CoreAudioApi;
+﻿using NAudio.CoreAudioApi;
 using NAudio.Wave;
+using System;
 
 namespace Captura.Audio
 {
@@ -73,7 +73,7 @@ namespace Captura.Audio
         public double PeakLevel => Device.AudioMeterInformation.MasterPeakValue;
 
         public override string ToString() => Name;
-        
+
         public void Dispose()
         {
             StopListeningForPeakLevel();

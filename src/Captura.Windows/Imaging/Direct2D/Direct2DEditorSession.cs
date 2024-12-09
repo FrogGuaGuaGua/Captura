@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Captura.Video;
 using Captura.Windows.MediaFoundation;
-using Captura.Video;
+using SharpDX;
 using SharpDX.Direct2D1;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
 using SharpDX.Mathematics.Interop;
 using SharpDX.WIC;
+using System;
 using AlphaMode = SharpDX.Direct2D1.AlphaMode;
 using Device = SharpDX.Direct3D11.Device;
 using Factory = SharpDX.DirectWrite.Factory;
 using Factory1 = SharpDX.Direct2D1.Factory1;
 using PixelFormat = SharpDX.Direct2D1.PixelFormat;
-using SharpDX;
-using MediaFoundation;
 
 namespace Captura.Windows.DirectX
 {

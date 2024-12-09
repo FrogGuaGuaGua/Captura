@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Captura.Models;
+using Reactive.Bindings;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using Captura.Models;
-using Reactive.Bindings;
 
 namespace Captura.Webcam
 {

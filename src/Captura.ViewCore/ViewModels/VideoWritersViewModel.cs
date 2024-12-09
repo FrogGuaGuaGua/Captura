@@ -1,9 +1,9 @@
+using Captura.SharpAvi;
+using Captura.Video;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System;
-using Captura.SharpAvi;
-using Captura.Video;
 
 namespace Captura.ViewModels
 {

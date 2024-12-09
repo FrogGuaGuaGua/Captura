@@ -26,7 +26,7 @@ namespace Captura.Tests
         public void CheckDefaultValue()
         {
             var obj = new FakePropertyStore();
-            
+
             Assert.Equal(obj.Property, FakePropertyStore.DefaultPropertyValue);
         }
     }

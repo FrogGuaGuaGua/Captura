@@ -1,11 +1,11 @@
-﻿using System;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Hotkeys;
 using Captura.Models;
 using Captura.Video;
 using Captura.ViewModels;
 using Hardcodet.Wpf.TaskbarNotification;
+using System;
 
 namespace Captura
 {
@@ -24,7 +24,7 @@ namespace Captura
 
             Binder.Bind<IHotkeyListener, HotkeyListener>();
             Binder.Bind<IHotkeyActor, HotkeyViewActor>();
-            
+
             Binder.BindSingleton<AboutViewModel>();
             Binder.BindSingleton<RegionSelectorViewModel>();
 

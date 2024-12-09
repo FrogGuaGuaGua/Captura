@@ -66,9 +66,9 @@ namespace Captura.Audio
         /// </summary>
         public AudioFileWriter(string FileName, WaveFormat Format, bool Riff = true)
             : this(new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read), Format, Riff) { }
-        
+
         bool HasFactChunk => _format.Encoding != WaveFormatEncoding.Pcm && _format.BitsPerSample != 0;
-        
+
         /// <summary>
         /// Number of bytes of audio in the data chunk
         /// </summary>
@@ -83,7 +83,7 @@ namespace Captura.Audio
             {
                 if (_riff && _writer.BaseStream.Length + Count > uint.MaxValue)
                     throw new ArgumentException("WAV file too large", nameof(Count));
-                
+
                 _writer.Write(Data, Offset, Count);
                 Length += Count;
             }
@@ -97,7 +97,7 @@ namespace Captura.Audio
             lock (_syncLock)
             {
                 _writer.Flush();
-                
+
                 if (!_riff)
                     return;
 
@@ -106,7 +106,7 @@ namespace Captura.Audio
                 _writer.BaseStream.Position = pos;
             }
         }
-        
+
         /// <summary>
         /// Updates the header with file size information
         /// </summary>

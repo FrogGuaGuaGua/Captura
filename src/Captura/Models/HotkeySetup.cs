@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using Captura.Models;
+﻿using Captura.Models;
+using System.Linq;
 
 namespace Captura.Hotkeys
 {

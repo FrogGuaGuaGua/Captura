@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Captura.Loc;
+using System;
 using System.IO;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using Captura.Loc;
 
 namespace Captura.FFmpeg
 {
@@ -42,7 +42,7 @@ namespace Captura.FFmpeg
                     lastProgress = P;
                 }, _proxySettings.GetWebProxy(), CancellationToken);
             }
-            catch (WebException webException) when(webException.Status == WebExceptionStatus.RequestCanceled)
+            catch (WebException webException) when (webException.Status == WebExceptionStatus.RequestCanceled)
             {
                 Progress.Report(new FFmpegDownloaderProgress(FFmpegDownloaderState.Cancelled));
                 return false;

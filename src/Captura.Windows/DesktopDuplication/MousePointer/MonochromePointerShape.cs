@@ -1,7 +1,7 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using Captura.Windows.DirectX;
+﻿using Captura.Windows.DirectX;
 using SharpDX.DXGI;
+using System;
+using System.Runtime.InteropServices;
 
 namespace Captura.Windows.DesktopDuplication
 {

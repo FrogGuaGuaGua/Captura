@@ -3,7 +3,7 @@
     public class CustomOverlay : TextOverlay
     {
         readonly CustomOverlaySettings _overlaySettings;
-        
+
         public CustomOverlay(CustomOverlaySettings OverlaySettings) : base(OverlaySettings)
         {
             _overlaySettings = OverlaySettings;

@@ -1,9 +1,9 @@
-﻿using SharpAvi.Codecs;
+﻿using Captura.Video;
+using SharpAvi.Codecs;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Captura.Video;
 
 namespace Captura.SharpAvi
 {

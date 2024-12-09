@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Drawing;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using System.Linq;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Imgur;
 using Captura.MouseKeyHook;
 using Captura.Video;
 using Captura.Windows;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.ObjectModel;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 
 namespace Captura
 {
@@ -87,13 +87,13 @@ namespace Captura
         };
 
         public MouseClickSettings Clicks { get; set; } = new MouseClickSettings();
-        
+
         public KeystrokesSettings Keystrokes { get; set; } = new KeystrokesSettings();
 
         public TextOverlaySettings Elapsed { get; set; } = new TextOverlaySettings();
 
         public ObservableCollection<CensorOverlaySettings> Censored { get; } = new ObservableCollection<CensorOverlaySettings>();
-        
+
         public VisualSettings UI { get; } = new VisualSettings();
 
         public ScreenShotSettings ScreenShots { get; } = new ScreenShotSettings();
@@ -194,15 +194,15 @@ namespace Captura
 
                 .Replace("%yyyy%", now.ToString("yyyy"))
                 .Replace("%yy%", now.ToString("yy"))
-                
+
                 .Replace("%MMMM%", now.ToString("MMMM"))
                 .Replace("%MMM%", now.ToString("MMM"))
                 .Replace("%MM%", now.ToString("MM"))
-                
+
                 .Replace("%dd%", now.ToString("dd"))
                 .Replace("%ddd%", now.ToString("ddd"))
                 .Replace("%dddd%", now.ToString("dddd"))
-                
+
                 .Replace("%HH%", now.ToString("HH"))
                 .Replace("%hh%", now.ToString("hh"))
 
@@ -210,11 +210,11 @@ namespace Captura
                 .Replace("%ss%", now.ToString("ss"))
                 .Replace("%tt%", now.ToString("tt"))
                 .Replace("%zzz%", now.ToString("zzz"));
-            
+
             var path = Path.Combine(outPath, $"{filename}{Extension}");
 
             var baseDir = Path.GetDirectoryName(path);
-            if (baseDir != null) 
+            if (baseDir != null)
                 Directory.CreateDirectory(baseDir);
 
             if (!File.Exists(path))

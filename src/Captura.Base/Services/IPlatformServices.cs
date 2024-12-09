@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Captura.Video;
 
 namespace Captura
 {

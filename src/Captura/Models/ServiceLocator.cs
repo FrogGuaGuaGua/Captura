@@ -18,7 +18,7 @@ namespace Captura
         }
 
         public WebcamPage WebcamPage => ServiceProvider.Get<WebcamPage>();
-        
+
         public MainViewModel MainViewModel => ServiceProvider.Get<MainViewModel>();
 
         public RecentViewModel RecentViewModel => ServiceProvider.Get<RecentViewModel>();

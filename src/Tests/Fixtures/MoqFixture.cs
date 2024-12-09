@@ -1,7 +1,7 @@
-﻿using System;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Video;
 using Moq;
+using System;
 
 namespace Captura.Tests
 {

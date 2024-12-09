@@ -1,8 +1,8 @@
-﻿using Captura.Models;
+﻿using Captura.Loc;
+using Captura.Models;
+using Reactive.Bindings;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Captura.Loc;
-using Reactive.Bindings;
 
 namespace Captura.ViewModels
 {

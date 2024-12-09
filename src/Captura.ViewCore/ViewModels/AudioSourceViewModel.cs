@@ -1,12 +1,12 @@
-﻿using System;
-using Captura.Audio;
+﻿using Captura.Audio;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows.Input;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 
 namespace Captura.Models
 {
@@ -92,7 +92,7 @@ namespace Captura.Models
             }
 
             _speakers.Clear();
-            
+
             if (_audioSource.DefaultSpeaker is { } defaultSpeaker)
             {
                 _speakers.Add(defaultSpeaker);

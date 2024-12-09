@@ -1,12 +1,12 @@
 ﻿// Adapted from https://github.com/jasonpang/desktop-duplication-net
 
-using SharpDX.DXGI;
-using System;
-using System.Drawing;
-using System.Linq;
-using System.Collections.Generic;
 using Captura.Video;
 using Captura.Windows.DirectX;
+using SharpDX.DXGI;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 
 namespace Captura.Windows.DesktopDuplication
 {
@@ -72,7 +72,7 @@ namespace Captura.Windows.DesktopDuplication
                     }
 
                     return RepeatFrame.Instance;
-                }                
+                }
             }
 
             var editor = new Direct2DEditor(_editorSession);

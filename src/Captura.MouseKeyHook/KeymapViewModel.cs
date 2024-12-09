@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Captura.MouseKeyHook
 {
@@ -103,7 +103,7 @@ namespace Captura.MouseKeyHook
             var keymap = new Keymap();
 
             JsonConvert.PopulateObject(Content, keymap);
-            
+
             Init(keymap);
         }
 

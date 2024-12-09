@@ -22,7 +22,7 @@ namespace Captura.SharpAvi
 
             return new AviWriter(Args.FileName, _codec, Args.ImageProvider, Args.FrameRate, Args.AudioProvider);
         }
-        
+
         public override string ToString() => _codec.Name;
     }
 }

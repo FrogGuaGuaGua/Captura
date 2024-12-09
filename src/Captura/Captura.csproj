@@ -3,7 +3,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Captura</RootNamespace>
     <AssemblyName>captura</AssemblyName>
-    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <UseWPF>true</UseWPF>

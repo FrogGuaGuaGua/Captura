@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.Native;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using Captura.Native;
 
 namespace Captura.Video
 {
@@ -11,7 +11,7 @@ namespace Captura.Video
     static class MouseCursor
     {
         const int CursorShowing = 1;
-        
+
         /// <summary>
         /// Draws this overlay.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Captura.Video
         {
             Location = Point.Empty;
 
-            var cursorInfo = new CursorInfo {cbSize = Marshal.SizeOf<CursorInfo>()};
+            var cursorInfo = new CursorInfo { cbSize = Marshal.SizeOf<CursorInfo>() };
 
             if (!User32.GetCursorInfo(ref cursorInfo))
                 return IntPtr.Zero;

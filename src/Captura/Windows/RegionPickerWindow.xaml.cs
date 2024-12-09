@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Captura.Video;
+using Captura.ViewModels;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using Captura.Video;
-using Captura.ViewModels;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 using Point = System.Windows.Point;
 
@@ -66,7 +66,7 @@ namespace Captura
             {
                 var rect = Rect.Value;
 
-                SizeText.Text = $"{(int) rect.Width} x {(int) rect.Height}";
+                SizeText.Text = $"{(int)rect.Width} x {(int)rect.Height}";
 
                 SizeText.Margin = new Thickness(rect.Left + rect.Width / 2 - SizeText.ActualWidth / 2, rect.Top + rect.Height / 2 - SizeText.ActualHeight / 2, 0, 0);
 
@@ -207,7 +207,7 @@ namespace Captura
 
             var r = rect.Value;
 
-            return new Rectangle((int) ((Left + r.X) * Dpi.X),
+            return new Rectangle((int)((Left + r.X) * Dpi.X),
                 (int)((Top + r.Y) * Dpi.Y),
                 (int)(r.Width * Dpi.X),
                 (int)(r.Height * Dpi.Y));

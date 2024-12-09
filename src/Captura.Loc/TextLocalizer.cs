@@ -8,7 +8,7 @@
 
             LanguageManager.Instance.LanguageChanged += L => RaisePropertyChanged(nameof(Display));
         }
-        
+
         string _key;
 
         public string LocalizationKey

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Video;
+using System;
 using System.Threading.Tasks;
-using Captura.Video;
 
 namespace Captura.FFmpeg
 {

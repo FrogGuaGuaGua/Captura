@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Captura.Audio;
+﻿using Captura.Audio;
+using System.Collections.Generic;
 
 namespace Captura.FFmpeg
 {

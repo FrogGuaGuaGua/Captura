@@ -1,5 +1,5 @@
-﻿using System.IO;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace Captura.Models
 {

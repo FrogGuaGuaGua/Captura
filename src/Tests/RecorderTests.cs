@@ -1,7 +1,7 @@
-﻿using System;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.Video;
 using Moq;
+using System;
 using Xunit;
 
 namespace Captura.Tests
@@ -91,7 +91,7 @@ namespace Captura.Tests
             var videoWriterMock = _moq.GetVideoFileWriterMock();
             var audioProviderMock = _moq.GetAudioProviderMock();
 
-            using (new Recorder(videoWriterMock.Object, imgProviderMock.Object, 10, audioProviderMock.Object)) 
+            using (new Recorder(videoWriterMock.Object, imgProviderMock.Object, 10, audioProviderMock.Object))
             {
             }
 
@@ -109,7 +109,7 @@ namespace Captura.Tests
             using (new AudioRecorder(audioWriterMock.Object, audioProviderMock.Object))
             {
             }
-            
+
             audioWriterMock.Verify(M => M.Dispose(), Times.Once);
             audioProviderMock.Verify(M => M.Dispose(), Times.Once);
         }

@@ -7,9 +7,9 @@ namespace Captura
     public class ModernToggleButton : CheckBox
     {
         public static readonly DependencyProperty IconDataProperty = DependencyProperty.Register(nameof(IconData), typeof(Geometry), typeof(ModernToggleButton));
-        
+
         public ModernToggleButton() { DefaultStyleKey = typeof(ModernToggleButton); }
-        
+
         public Geometry IconData
         {
             get => (Geometry)GetValue(IconDataProperty);

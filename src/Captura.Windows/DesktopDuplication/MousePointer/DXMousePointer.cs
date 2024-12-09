@@ -1,9 +1,9 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using Captura.Windows.DirectX;
+﻿using Captura.Windows.DirectX;
 using SharpDX;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
+using System;
+using System.Runtime.InteropServices;
 using Rectangle = System.Drawing.Rectangle;
 
 namespace Captura.Windows.DesktopDuplication
@@ -93,8 +93,8 @@ namespace Captura.Windows.DesktopDuplication
 
             var rect = new Rectangle(_pointerPosition.Position.X + Location.X,
                 _pointerPosition.Position.Y + Location.Y,
-                (int) bmp.Size.Width,
-                (int) bmp.Size.Height);
+                (int)bmp.Size.Width,
+                (int)bmp.Size.Height);
 
             Editor.DrawImage(new Direct2DImage(bmp), rect);
         }

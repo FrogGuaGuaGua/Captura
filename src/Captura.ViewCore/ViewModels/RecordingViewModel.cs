@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reactive.Linq;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Captura.Audio;
+﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Loc;
 using Captura.Models;
@@ -13,6 +6,13 @@ using Captura.Video;
 using Captura.Webcam;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Captura.ViewModels
 {
@@ -72,7 +72,7 @@ namespace Captura.ViewModels
                     .Audio
                     .ObserveProperty(M => M.RecordSpeaker)
             }
-            .CombineLatest(M => M[0] || M[1]);            
+            .CombineLatest(M => M[0] || M[1]);
 
             RecordCommand = new[]
                 {
@@ -137,7 +137,7 @@ namespace Captura.ViewModels
             RecorderState = RecordingModel
                 .ObserveProperty(M => M.RecorderState)
                 .ToReadOnlyReactivePropertySlim();
-            
+
             TimerModel.DurationElapsed += () =>
             {
                 _syncContext.Run(async () => await StopRecording(), true);
@@ -258,7 +258,7 @@ namespace Captura.ViewModels
                     catch (Exception e)
                     {
                         _messageProvider.ShowException(e, "Conversion Failed");
-                    }                    
+                    }
                 }
 
                 lock (_stopRecTaskLock)

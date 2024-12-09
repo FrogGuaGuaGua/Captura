@@ -1,7 +1,7 @@
-﻿using System;
-using Captura.Windows.DirectX;
+﻿using Captura.Windows.DirectX;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
+using System;
 
 namespace Captura.Video
 {

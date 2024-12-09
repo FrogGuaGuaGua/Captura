@@ -1,9 +1,9 @@
 ﻿// Adapted from https://github.com/jasonpang/desktop-duplication-net
 
-using SharpDX.DXGI;
-using System;
 using Captura.Video;
 using Captura.Windows.DirectX;
+using SharpDX.DXGI;
+using System;
 
 namespace Captura.Windows.DesktopDuplication
 {
@@ -20,13 +20,13 @@ namespace Captura.Windows.DesktopDuplication
             var bounds = Output.Description.DesktopBounds;
             var width = bounds.Right - bounds.Left;
             var height = bounds.Bottom - bounds.Top;
-            
+
             _editorSession = new Direct2DEditorSession(width, height, PreviewWindow);
 
             if (IncludeCursor)
                 _mousePointer = new DxMousePointer(_editorSession);
         }
-        
+
         public IEditableFrame Capture()
         {
             try

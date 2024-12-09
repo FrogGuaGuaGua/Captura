@@ -22,7 +22,7 @@ namespace Captura.Models
 
             ++_frames;
 
-            if (_sw.Elapsed < _diff) 
+            if (_sw.Elapsed < _diff)
                 return;
 
             Fps = (int)Math.Round(_frames / _sw.Elapsed.TotalSeconds);

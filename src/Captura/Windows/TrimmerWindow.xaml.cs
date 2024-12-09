@@ -9,7 +9,7 @@ namespace Captura.Views
         public TrimmerWindow()
         {
             InitializeComponent();
-            
+
             if (DataContext is TrimmerViewModel vm)
             {
                 vm.AssignPlayer(MediaElement);

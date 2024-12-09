@@ -1,10 +1,10 @@
-﻿using System.Windows;
-using System.Windows.Input;
-using System.IO;
-using System.Diagnostics;
+﻿using Captura.Models;
 using System;
+using System.Diagnostics;
+using System.IO;
+using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using Captura.Models;
 
 namespace Captura
 {
@@ -36,7 +36,7 @@ namespace Captura
         }
 
         public event Action RemoveRequested;
-        
+
         void Image_MouseUp(object Sender, MouseButtonEventArgs E)
         {
             ServiceProvider.LaunchFile(new ProcessStartInfo(_filePath));

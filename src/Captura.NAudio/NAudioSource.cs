@@ -1,7 +1,7 @@
-﻿using System;
+﻿using NAudio.CoreAudioApi;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using NAudio.CoreAudioApi;
 
 namespace Captura.Audio
 {

@@ -18,7 +18,7 @@ namespace Captura
                 var icon = Geometry.Parse(b ? icons.Stop : icons.Play);
                 var color = b ? Colors.OrangeRed : Colors.LimeGreen;
 
-                return new Style(typeof(ModernButton), (Style) Application.Current.Resources[typeof(ModernButton)])
+                return new Style(typeof(ModernButton), (Style)Application.Current.Resources[typeof(ModernButton)])
                 {
                     Setters =
                     {

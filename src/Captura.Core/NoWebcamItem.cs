@@ -1,5 +1,5 @@
-using System;
 using Captura.Loc;
+using System;
 
 namespace Captura.Webcam
 {

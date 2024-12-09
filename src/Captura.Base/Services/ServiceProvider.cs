@@ -1,4 +1,5 @@
 using Captura.Models;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +7,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Ninject;
 
 namespace Captura
 {
@@ -78,7 +78,7 @@ namespace Captura
         }
 
         public static T Get<T>() => Kernel.Get<T>();
-        
+
         public static void LaunchFile(ProcessStartInfo StartInfo)
         {
             try { Process.Start(StartInfo.FileName); }

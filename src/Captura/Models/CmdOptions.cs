@@ -13,7 +13,7 @@ namespace Captura
 
         [Option("tray", HelpText = "Start minimized into the system tray.")]
         public bool Tray { get; set; }
-        
+
         [Option("no-hotkey", HelpText = "Do not Register hotkeys.")]
         public bool NoHotkeys { get; set; }
 

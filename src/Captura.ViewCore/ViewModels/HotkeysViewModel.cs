@@ -1,7 +1,7 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
-using Captura.Hotkeys;
+﻿using Captura.Hotkeys;
 using Reactive.Bindings;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace Captura.ViewModels
 {

@@ -1,15 +1,15 @@
-﻿using Captura.Models;
+﻿using Captura.FFmpeg;
+using Captura.Hotkeys;
+using Captura.Loc;
+using Captura.Models;
+using Captura.Video;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reactive.Linq;
 using System.Windows.Input;
-using Captura.FFmpeg;
-using Captura.Hotkeys;
-using Captura.Loc;
-using Captura.Video;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 
 namespace Captura.ViewModels
 {

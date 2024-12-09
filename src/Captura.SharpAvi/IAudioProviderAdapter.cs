@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Audio;
+using System;
 using System.IO;
-using Captura.Audio;
 using IAudioEncoder = SharpAvi.Codecs.IAudioEncoder;
 
 namespace Captura.SharpAvi

@@ -11,7 +11,7 @@ namespace Captura
         {
             if (double.TryParse(Value?.ToString(), out var left) && double.TryParse(Parameter?.ToString(), out var right))
             {
-                var b =  left < right;
+                var b = left < right;
 
                 if (TargetType == typeof(Visibility))
                     return b ? Visibility.Visible : Visibility.Collapsed;

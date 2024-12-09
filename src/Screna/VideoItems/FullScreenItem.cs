@@ -20,6 +20,6 @@
         {
             return _platformServices.GetAllScreensProvider(IncludeCursor,
                 _videoSettings.RecorderMode == RecorderMode.Steps);
-		}
+        }
     }
 }

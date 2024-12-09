@@ -1,7 +1,7 @@
-﻿using System;
-using System.Drawing;
-using Captura.Video;
+﻿using Captura.Video;
 using Moq;
+using System;
+using System.Drawing;
 using Xunit;
 
 namespace Captura.Tests

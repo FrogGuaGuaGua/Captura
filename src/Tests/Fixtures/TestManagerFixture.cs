@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
-using Captura.Fakes;
+﻿using Captura.Fakes;
 using Captura.Video;
+using System;
+using System.IO;
 
 namespace Captura.Tests
 {
@@ -20,7 +20,7 @@ namespace Captura.Tests
         static string GetPath(string FolderName, string FileName)
         {
             var path = typeof(IOverlay).Assembly.CodeBase
-                .Split(new [] {"///"}, StringSplitOptions.None)[1];
+                .Split(new[] { "///" }, StringSplitOptions.None)[1];
 
 #if DEBUG
             const string config = "Debug";

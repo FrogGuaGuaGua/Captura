@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Google.Apis.Upload;
+using Google.Apis.YouTube.v3;
+using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Google.Apis.Upload;
-using Google.Apis.YouTube.v3;
 using VideoYT = Google.Apis.YouTube.v3.Data.Video;
 
 namespace Captura.YouTube

@@ -1,9 +1,9 @@
-﻿using System.Drawing;
+﻿using Captura.Models;
+using System.Drawing;
 using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
-using Captura.Models;
 
 namespace Captura
 {
@@ -16,7 +16,7 @@ namespace Captura
         public MainWindow()
         {
             Instance = this;
-            
+
             InitializeComponent();
 
             _helper = ServiceProvider.Get<MainWindowHelper>();
@@ -65,11 +65,11 @@ namespace Captura
         void RepositionWindowIfOutside()
         {
             // Window dimensions taking care of DPI
-            var rect = new RectangleF((float) Left,
-                (float) Top,
-                (float) ActualWidth,
-                (float) ActualHeight).ApplyDpi();
-            
+            var rect = new RectangleF((float)Left,
+                (float)Top,
+                (float)ActualWidth,
+                (float)ActualHeight).ApplyDpi();
+
             if (!Screen.AllScreens.Any(M => M.Bounds.Contains(rect)))
             {
                 Left = 50;

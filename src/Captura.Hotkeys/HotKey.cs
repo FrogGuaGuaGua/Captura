@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Captura.Native;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using Captura.Native;
 
 namespace Captura.Hotkeys
 {
@@ -58,8 +58,8 @@ namespace Captura.Hotkeys
             // Generate Unique ID
             var uid = Guid.NewGuid().ToString("N");
             Id = Kernel32.GlobalAddAtom(uid);
-            
-            if (User32.RegisterHotKey(IntPtr.Zero, Id, (int) Modifiers, (uint) Key))
+
+            if (User32.RegisterHotKey(IntPtr.Zero, Id, (int)Modifiers, (uint)Key))
                 IsRegistered = true;
             else
             {
@@ -67,7 +67,7 @@ namespace Captura.Hotkeys
                 Id = 0;
             }
         }
-        
+
         public Keys Key { get; private set; }
 
         public Modifiers Modifiers { get; private set; }

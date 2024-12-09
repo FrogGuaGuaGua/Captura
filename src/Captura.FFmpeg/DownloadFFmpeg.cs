@@ -31,7 +31,7 @@ namespace Captura.FFmpeg
             {
                 Progress?.Invoke(E.ProgressPercentage);
             };
-                
+
             await webClient.DownloadFileTaskAsync(FFmpegUri, FFmpegArchivePath);
         }
 

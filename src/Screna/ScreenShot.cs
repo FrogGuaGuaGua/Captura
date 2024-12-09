@@ -30,7 +30,7 @@ namespace Captura.Video
 
             return platformServices.CaptureTransparent(Window, IncludeCursor);
         }
-        
+
         /// <summary>
         /// Captures a Specific Region.
         /// </summary>

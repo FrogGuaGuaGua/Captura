@@ -7,7 +7,7 @@
             get => Get("");
             set => Set(value);
         }
-        
+
         public string Writer
         {
             get => Get<string>();
@@ -25,7 +25,7 @@
             get => Get<string>();
             set => Set(value);
         }
-        
+
         public string SourceKind
         {
             get => Get("");

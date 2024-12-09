@@ -1,6 +1,6 @@
-﻿using System;
-using SharpDX.Direct3D11;
+﻿using SharpDX.Direct3D11;
 using SharpDX.Direct3D9;
+using System;
 
 // Adapted from https://github.com/Marlamin/SharpDX.WPF
 

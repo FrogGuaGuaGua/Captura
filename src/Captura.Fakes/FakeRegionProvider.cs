@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using Captura.Video;
 using System;
-using Captura.Video;
+using System.Drawing;
 
 namespace Captura.Fakes
 {
@@ -15,7 +15,7 @@ namespace Captura.Fakes
             get => false;
             set { }
         }
-        
+
         public Rectangle SelectedRegion { get; set; }
 
         public IVideoItem VideoSource => new RegionItem(this, ServiceProvider.Get<IPlatformServices>());

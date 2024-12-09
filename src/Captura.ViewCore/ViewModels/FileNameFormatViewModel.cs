@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using Captura.Loc;
+﻿using Captura.Loc;
 using Captura.Models;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Captura.ViewModels
 {
@@ -11,7 +11,7 @@ namespace Captura.ViewModels
         public FileNameFormatViewModel(Settings Settings, ILocalizationProvider Loc)
             : base(Settings, Loc) { }
 
-        public IEnumerable<FileNameFormatGroup> FormatGroups { get; } = new []
+        public IEnumerable<FileNameFormatGroup> FormatGroups { get; } = new[]
         {
             new FileNameFormatGroup("Time", new []
             {
@@ -41,9 +41,9 @@ namespace Captura.ViewModels
             }),
             new FileNameFormatGroup("Other", new []
             {
-                new FileNameFormatItem("%computer%", "Company Name"), 
+                new FileNameFormatItem("%computer%", "Company Name"),
                 new FileNameFormatItem("%user%", "User Name")
-            }), 
+            }),
         };
 
         public string FilenameFormat

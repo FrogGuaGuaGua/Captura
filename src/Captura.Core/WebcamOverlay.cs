@@ -1,7 +1,7 @@
-﻿using System;
-using System.Drawing;
-using Captura.Video;
+﻿using Captura.Video;
 using Reactive.Bindings;
+using System;
+using System.Drawing;
 
 namespace Captura.Webcam
 {
@@ -31,7 +31,7 @@ namespace Captura.Webcam
             if (cap == null)
                 return;
 
-            var frameSize = new Size((int) Editor.Width, (int) Editor.Height);
+            var frameSize = new Size((int)Editor.Width, (int)Editor.Height);
             var webcamSize = new Size(cap.Width, cap.Height);
 
             var pos = _settings.GetPosition(frameSize, webcamSize);

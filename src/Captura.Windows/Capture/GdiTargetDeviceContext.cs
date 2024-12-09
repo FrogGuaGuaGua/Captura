@@ -1,7 +1,7 @@
-﻿using System;
-using System.Drawing;
-using Captura.Native;
+﻿using Captura.Native;
 using Captura.Video;
+using System;
+using System.Drawing;
 
 namespace Captura.Windows.Gdi
 {

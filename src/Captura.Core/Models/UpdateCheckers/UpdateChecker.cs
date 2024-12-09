@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 
 namespace Captura.Models
 {

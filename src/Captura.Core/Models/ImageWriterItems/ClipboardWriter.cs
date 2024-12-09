@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Captura.Loc;
+﻿using Captura.Loc;
+using System.Threading.Tasks;
 
 namespace Captura.Models
 {

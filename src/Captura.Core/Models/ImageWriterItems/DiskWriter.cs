@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Captura.Loc;
+using System;
 using System.Threading.Tasks;
-using Captura.Loc;
 
 namespace Captura.Models
 {
@@ -37,7 +37,7 @@ namespace Captura.Models
                 var fileName = _settings.GetFileName(extension, FileName);
 
                 Image.Save(fileName, Format);
-                
+
                 _recentList.Add(new FileRecentItem(fileName, RecentFileType.Image));
 
                 // Copy path to clipboard only when clipboard writer is off

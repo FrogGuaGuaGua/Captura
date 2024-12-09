@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using Captura.Video;
+﻿using Captura.Video;
+using System.Linq;
 
 namespace Captura.FFmpeg
 {

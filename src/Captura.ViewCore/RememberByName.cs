@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Captura.Video;
+﻿using Captura.Video;
 using Captura.ViewModels;
 using Captura.Webcam;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Captura.Models
 {
