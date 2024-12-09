@@ -10,23 +10,5 @@ namespace Captura
         {
             new TrimmerWindow().ShowAndFocus();
         }
-
-        async void UploadToImgur(object Sender, RoutedEventArgs E)
-        {
-            var ofd = new OpenFileDialog
-            {
-                Filter = "Image Files|*.png;*.jpg;*.jpeg;*.bmp;*.wmp;*.tiff",
-                CheckFileExists = true,
-                CheckPathExists = true
-            };
-
-            if (ofd.ShowDialog().GetValueOrDefault())
-            {
-                var imgSystem = ServiceProvider.Get<IImagingSystem>();
-
-                using var img = imgSystem.LoadBitmap(ofd.FileName);
-                await img.UploadImage();
-            }
-        }
     }
 }

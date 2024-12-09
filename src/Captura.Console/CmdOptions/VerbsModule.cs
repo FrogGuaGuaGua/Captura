@@ -12,7 +12,6 @@
             Binder.Bind<ICmdlineVerb, ShotCmdOptions>();
             Binder.Bind<ICmdlineVerb, FFmpegCmdOptions>();
             Binder.Bind<ICmdlineVerb, ListCmdOptions>();
-            Binder.Bind<ICmdlineVerb, UploadCmdOptions>();
         }
     }
 }

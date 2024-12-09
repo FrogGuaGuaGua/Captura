@@ -145,7 +145,6 @@ namespace Captura.Loc
         string TrayIcon { get; }
         string Trim { get; }
         string Undo { get; }
-        string UploadToImgur { get; }
         string UseProxyAuth { get; }
         string UserName { get; }
         string VarFrameRate { get; }

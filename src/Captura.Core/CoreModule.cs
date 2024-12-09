@@ -35,7 +35,6 @@ namespace Captura
             // Recent
             Binder.Bind<IRecentList, RecentListRepository>();
             Binder.Bind<IRecentItemSerializer, FileRecentSerializer>();
-            Binder.Bind<IRecentItemSerializer, UploadRecentSerializer>();
 
             Binder.Bind<IIconSet, MaterialDesignIcons>();
 
@@ -55,7 +54,6 @@ namespace Captura
         {
             Binder.BindAsInterfaceAndClass<IImageWriterItem, DiskWriter>();
             Binder.BindAsInterfaceAndClass<IImageWriterItem, ClipboardWriter>();
-            Binder.BindAsInterfaceAndClass<IImageWriterItem, ImageUploadWriter>();
             Binder.BindAsInterfaceAndClass<IImageWriterItem, EditorWriter>();
         }
 

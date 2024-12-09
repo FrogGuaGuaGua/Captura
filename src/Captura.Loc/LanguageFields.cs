@@ -863,12 +863,6 @@ namespace Captura.Loc
             set => Set(value);
         }
 
-        public string UploadToImgur
-        {
-            get => Get();
-            set => Set(value);
-        }
-
         public string UseProxyAuth
         {
             get => Get();

@@ -79,14 +79,6 @@
                 </StackPanel>
             </CheckBox>
 
-            <CheckBox IsChecked="{Binding ImgurWriter.Active}"
-                      IsEnabled="{Binding ViewConditions.IsEnabled.Value, Source={StaticResource ServiceLocator}}">
-                <StackPanel Orientation="Horizontal">
-                    <Path Data="{Binding Icons.Web, Source={StaticResource ServiceLocator}}"/>
-                    <TextBlock Text="Imgur"/>
-                </StackPanel>
-            </CheckBox>
-
             <CheckBox IsChecked="{Binding EditorWriter.Active, Source={StaticResource ServiceLocator}}"
                       IsEnabled="{Binding ViewConditions.IsEnabled.Value, Source={StaticResource ServiceLocator}}">
                 <StackPanel Orientation="Horizontal">

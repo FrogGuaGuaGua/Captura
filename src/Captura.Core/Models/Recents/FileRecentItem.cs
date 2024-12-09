@@ -55,7 +55,6 @@ namespace Captura.Models
             {
                 case RecentFileType.Image:
                     list.Add(new RecentAction(loc.CopyToClipboard, icons.Clipboard, OnCopyToClipboardExecute));
-                    list.Add(new RecentAction(loc.UploadToImgur, icons.Upload, OnUploadToImgurExecute));
                     list.Add(new RecentAction(loc.Edit, icons.Pencil, () => windowService.EditImage(this.FileName)));
                     break;
 
@@ -71,21 +70,6 @@ namespace Captura.Models
             list.Add(new RecentAction(loc.Delete, icons.Delete, OnDelete));
 
             Actions = list;
-        }
-
-        async void OnUploadToImgurExecute()
-        {
-            if (!File.Exists(FileName))
-            {
-                ServiceProvider.MessageProvider.ShowError("File not Found");
-
-                return;
-            }
-
-            var imgSystem = ServiceProvider.Get<IImagingSystem>();
-
-            using var img = imgSystem.LoadBitmap(FileName);
-            await img.UploadImage();
         }
 
         void OnCopyToClipboardExecute()
