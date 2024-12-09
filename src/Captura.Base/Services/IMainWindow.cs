@@ -10,6 +10,5 @@
 
         void TrimMedia(string FileName);
 
-        void UploadToYouTube(string FileName);
     }
 }

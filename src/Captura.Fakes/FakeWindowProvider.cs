@@ -23,6 +23,5 @@ namespace Captura.Fakes
 
         public void TrimMedia(string FileName) { }
 
-        public void UploadToYouTube(string FileName) { }
     }
 }

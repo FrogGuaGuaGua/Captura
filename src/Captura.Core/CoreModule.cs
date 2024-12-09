@@ -1,7 +1,7 @@
 ﻿using Captura.Audio;
 using Captura.FFmpeg;
 using Captura.Hotkeys;
-using Captura.Imgur;
+
 using Captura.Loc;
 using Captura.Models;
 using Captura.MouseKeyHook;
@@ -10,7 +10,7 @@ using Captura.Video;
 using Captura.ViewModels;
 using Captura.Webcam;
 using Captura.Windows;
-using Captura.YouTube;
+
 
 namespace Captura
 {
@@ -37,10 +37,7 @@ namespace Captura
             Binder.Bind<IRecentItemSerializer, FileRecentSerializer>();
             Binder.Bind<IRecentItemSerializer, UploadRecentSerializer>();
 
-            Binder.Bind<IImageUploader, ImgurUploader>();
             Binder.Bind<IIconSet, MaterialDesignIcons>();
-            Binder.Bind<IImgurApiKeys, ApiKeys>();
-            Binder.Bind<IYouTubeApiKeys, ApiKeys>();
 
             Binder.BindSingleton<HotKeyManager>();
 
@@ -110,7 +107,6 @@ namespace Captura
             Binder.Bind(() => Binder.Get<Settings>().Audio);
             Binder.Bind(() => Binder.Get<Settings>().Proxy);
             Binder.Bind(() => Binder.Get<Settings>().Sounds);
-            Binder.Bind(() => Binder.Get<Settings>().Imgur);
             Binder.Bind(() => Binder.Get<Settings>().Steps);
             Binder.Bind(() => Binder.Get<Settings>().Video);
             Binder.Bind(() => Binder.Get<Settings>().UI);

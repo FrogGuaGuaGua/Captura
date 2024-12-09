@@ -1,6 +1,6 @@
 ﻿using Captura.Audio;
 using Captura.FFmpeg;
-using Captura.Imgur;
+
 using Captura.MouseKeyHook;
 using Captura.Video;
 using Captura.Windows;
@@ -76,8 +76,6 @@ namespace Captura
         }
 
         public ProxySettings Proxy { get; } = new ProxySettings();
-
-        public ImgurSettings Imgur { get; } = new ImgurSettings();
 
         public WebcamOverlaySettings WebcamOverlay { get; set; } = new WebcamOverlaySettings();
 

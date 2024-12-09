@@ -43,7 +43,6 @@
     <ProjectReference Include="..\Captura.SharpAvi\Captura.SharpAvi.csproj" />
     <ProjectReference Include="..\Captura.ViewCore\Captura.ViewCore.csproj" />
     <ProjectReference Include="..\Captura.Windows\Captura.Windows.csproj" />
-    <ProjectReference Include="..\Captura.YouTube\Captura.YouTube.csproj" />
     <ProjectReference Include="..\Screna\Screna.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +51,7 @@
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageReference Include="ModernUI.WPF" Version="1.0.9" />
     <PackageReference Include="SamOatesGames.ModernUI.Xceed.Toolkit" Version="1.0.1905191936" />
+    <PackageReference Include="System.Management" Version="6.0.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
