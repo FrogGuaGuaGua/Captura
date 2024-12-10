@@ -101,7 +101,7 @@ namespace Captura.Audio
                 if (!_riff)
                     return;
 
-                Point pos = _writer.BaseStream.Position;
+                long pos = _writer.BaseStream.Position;
                 UpdateHeader();
                 _writer.BaseStream.Position = pos;
             }
