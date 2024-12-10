@@ -14,10 +14,10 @@ namespace Captura.Windows.DesktopDuplication
             Direct2DEditorSession EditorSession)
             : base(ShapeInfo.Width, ShapeInfo.Height >> 1, EditorSession)
         {
-            _andMaskBuffer = new byte[Width * Height / 8];
+            _andMaskBuffer = new byte[Width * Height >> 3];
             Marshal.Copy(ShapeBuffer, _andMaskBuffer, 0, _andMaskBuffer.Length);
 
-            _xorMaskBuffer = new byte[Width * Height / 8];
+            _xorMaskBuffer = new byte[Width * Height >> 3];
             Marshal.Copy(ShapeBuffer + _andMaskBuffer.Length, _xorMaskBuffer, 0, _xorMaskBuffer.Length);
         }
 
@@ -35,7 +35,7 @@ namespace Captura.Windows.DesktopDuplication
 
                 for (var col = 0; col < Width; ++col)
                 {
-                    var maskIndex = row * Width / 8 + col / 8;
+                    var maskIndex = row * Width >> 3 + col >> 3;
 
                     var andMask = (_andMaskBuffer[maskIndex] & bit) == bit;
                     var xorMask = (_xorMaskBuffer[maskIndex] & bit) == bit;

@@ -35,8 +35,8 @@ namespace Captura.Windows.MediaFoundation
                 _colorConverter.SetInputType(0, mediaTypeIn, 0);
             }
 
-            var outputStride = Width * 12 / 8;
-            var outputSampleSize = Height * outputStride;
+            int outputStride = Width * 12 / 8;
+            int outputSampleSize = Height * outputStride;
 
             using (var mediaTypeOut = new MediaType())
             {

@@ -36,7 +36,7 @@ namespace Captura.Audio
             this.BitsPerSample = (short)BitsPerSample;
             ExtraSize = 0;
 
-            BlockAlign = (short)(Channels * (BitsPerSample / 8));
+            BlockAlign = (short)(Channels * (BitsPerSample >> 3));
             AverageBytesPerSecond = this.SampleRate * BlockAlign;
         }
 

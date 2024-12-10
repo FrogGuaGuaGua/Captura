@@ -24,7 +24,7 @@ namespace Captura.Native
             _width = bounds.Width * sizeof(PixelData);
 
             if (_width % 4 != 0)
-                _width = 4 * (_width / 4 + 1);
+                _width = 4 * (_width >> 2 + 1);
 
             //Lock Image
             _bitmapData = _inputBitmap.LockBits(bounds, ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);

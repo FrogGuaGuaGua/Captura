@@ -95,7 +95,7 @@ namespace Captura.FFmpeg
                 _audioBytesPerFrame = (int)((1.0 / Args.FrameRate)
                                             * wf.SampleRate
                                             * wf.Channels
-                                            * (wf.BitsPerSample / 8.0));
+                                            * (wf.BitsPerSample >> 3));
 
                 // UpdatePeriod * Frequency * (Bytes per Second) * Channels * 2
                 var audioBufferSize = (int)((1000.0 / Args.FrameRate) * 44.1 * 2 * 2 * 2);

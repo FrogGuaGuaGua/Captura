@@ -28,7 +28,7 @@ namespace Captura.Audio
                 (ReadInterval / 1000.0)
                 * wf.SampleRate
                 * wf.Channels
-                * (wf.BitsPerSample / 8.0)
+                * (wf.BitsPerSample >> 3)
             );
 
             _buffer = new byte[bufferSize];

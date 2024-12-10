@@ -110,7 +110,7 @@ namespace Captura.Windows.MediaFoundation
             if (Args.AudioProvider != null)
             {
                 var wf = Args.AudioProvider.WaveFormat;
-                _audioInBytesPerSecond = wf.SampleRate * wf.Channels * wf.BitsPerSample / 8;
+                _audioInBytesPerSecond = wf.SampleRate * wf.Channels * wf.BitsPerSample >> 3;
 
                 using (var audioTypeOut = GetMediaType(wf))
                 {

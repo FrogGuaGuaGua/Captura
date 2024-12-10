@@ -35,11 +35,11 @@ namespace Captura.MouseKeyHook
             if (_records?.Last == null)
                 return;
 
-            var offsetY = 0f;
-            var fontSize = _settings.FontSize;
+            float offsetY = 0f;
+            int fontSize = _settings.FontSize;
             byte opacity = 255;
 
-            var index = 0;
+            int index = 0;
 
             foreach (var keyRecord in _records)
             {
@@ -67,7 +67,7 @@ namespace Captura.MouseKeyHook
 
         static Color ApplyOpacity(Color Color, int Opacity)
         {
-            var alpha = (int)Math.Round((Opacity / 255.0) * (Color.A / 255.0) * 255);
+            int alpha = (int)Math.Round((Opacity / 255.0) * (Color.A / 255.0) * 255);
 
             return Color.FromArgb(alpha, Color);
         }
@@ -106,8 +106,8 @@ namespace Captura.MouseKeyHook
 
         public static float GetLeft(TextOverlaySettings KeystrokesSettings, float FullWidth, float TextWidth)
         {
-            var x = KeystrokesSettings.X;
-            var padding = KeystrokesSettings.HorizontalPadding;
+            int x = KeystrokesSettings.X;
+            int padding = KeystrokesSettings.HorizontalPadding;
 
             switch (KeystrokesSettings.HorizontalAlignment)
             {
@@ -127,8 +127,8 @@ namespace Captura.MouseKeyHook
 
         public static float GetTop(TextOverlaySettings KeystrokesSettings, float FullHeight, float TextHeight, float Offset = 0)
         {
-            var y = KeystrokesSettings.Y;
-            var padding = KeystrokesSettings.VerticalPadding;
+            int y = KeystrokesSettings.Y;
+            int padding = KeystrokesSettings.VerticalPadding;
 
             switch (KeystrokesSettings.VerticalAlignment)
             {
@@ -210,9 +210,7 @@ namespace Captura.MouseKeyHook
             {
                 _records.Last = new DummyKeyRecord(lastDisplay + display);
             }
-            else if (display == _keymap.Control
-                     || display == _keymap.Alt
-                     || display == _keymap.Shift)
+            else if (display == _keymap.Control || display == _keymap.Alt || display == _keymap.Shift)
             {
                 // Handled on Key Up
                 _modifierSingleDown = true;

@@ -20,7 +20,7 @@ namespace Captura.Windows.MediaFoundation
         {
             _writer = MediaFactory.CreateSinkWriterFromURL(FileName, null, null);
 
-            _audioInBytesPerSecond = Wf.SampleRate * Wf.Channels * Wf.BitsPerSample / 8;
+            _audioInBytesPerSecond = Wf.SampleRate * Wf.Channels * Wf.BitsPerSample >> 3;
 
             using (var audioTypeOut = MfWriter.GetMediaType(Wf))
             {

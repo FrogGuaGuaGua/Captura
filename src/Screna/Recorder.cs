@@ -76,7 +76,7 @@ namespace Captura.Video
                 _audioBytesPerFrame = (int)((1.0 / FrameRate)
                                              * wf.SampleRate
                                              * wf.Channels
-                                             * (wf.BitsPerSample / 8.0));
+                                             * (wf.BitsPerSample >> 3));
 
                 _audioChunkBytes = (int)(_audioBytesPerFrame * (FrameRate * AudioChunkLengthMs / 1000.0));
             }
