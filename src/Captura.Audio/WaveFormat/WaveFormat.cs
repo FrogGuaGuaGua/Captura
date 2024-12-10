@@ -19,21 +19,21 @@ namespace Captura.Audio
         /// </summary>
         /// <param name="SampleRate">Sample Rate</param>
         /// <param name="Channels">Number of channels</param>
-        public WaveFormat(int SampleRate, int Channels) : this(SampleRate, 16, Channels) { }
+        public WaveFormat(int SampleRate, short Channels) : this(SampleRate, 16, Channels) { }
 
         /// <summary>
         /// Creates a new PCM format with the specified sample rate, bit depth and channels
         /// </summary>
-        public WaveFormat(int SampleRate, int BitsPerSample, int Channels)
+        public WaveFormat(int SampleRate, short BitsPerSample, short Channels)
         {
             if (Channels < 1)
                 throw new ArgumentOutOfRangeException(nameof(Channels), "Channels must be 1 or greater");
 
             // minimum 16 bytes, sometimes 18 for PCM
             Encoding = WaveFormatEncoding.Pcm;
-            this.Channels = (short)Channels;
+            this.Channels = Channels;
             this.SampleRate = SampleRate;
-            this.BitsPerSample = (short)BitsPerSample;
+            this.BitsPerSample = BitsPerSample;
             ExtraSize = 0;
 
             BlockAlign = (short)(Channels * (BitsPerSample >> 3));
@@ -45,17 +45,17 @@ namespace Captura.Audio
         /// </summary>
         /// <param name="SampleRate">sample rate</param>
         /// <param name="Channels">number of channels</param>
-        public static WaveFormat CreateIeeeFloatWaveFormat(int SampleRate, int Channels)
+        public static WaveFormat CreateIeeeFloatWaveFormat(int SampleRate, short Channels)
         {
             return new WaveFormat
             {
                 Encoding = WaveFormatEncoding.Float,
-                Channels = (short)Channels,
-                BitsPerSample = 32,
+                Channels = Channels,
                 SampleRate = SampleRate,
-                BlockAlign = (short)(4 * Channels),
-                AverageBytesPerSecond = SampleRate * 4 * Channels,
-                ExtraSize = 0
+                BitsPerSample = 32,
+                ExtraSize = 0,
+                BlockAlign = (short)(Channels << 2),
+                AverageBytesPerSecond = SampleRate * (Channels << 2)
             };
         }
 
@@ -71,18 +71,18 @@ namespace Captura.Audio
         public virtual void Serialize(BinaryWriter Writer)
         {
             Writer.Write((short)Encoding);
-            Writer.Write((short)Channels);
+            Writer.Write(Channels);
             Writer.Write(SampleRate);
             Writer.Write(AverageBytesPerSecond);
-            Writer.Write((short)BlockAlign);
-            Writer.Write((short)BitsPerSample);
+            Writer.Write(BlockAlign);
+            Writer.Write(BitsPerSample);
             Writer.Write((short)ExtraSize);
         }
 
         /// <summary>
         /// Returns the number of channels (1=mono,2=stereo etc)
         /// </summary>
-        public int Channels { get; set; }
+        public short Channels { get; set; }
 
         /// <summary>
         /// Returns the sample rate (samples per second)
@@ -97,13 +97,13 @@ namespace Captura.Audio
         /// <summary>
         /// Returns the block alignment
         /// </summary>
-        public int BlockAlign { get; set; }
+        public short BlockAlign { get; set; }
 
         /// <summary>
         /// Returns the number of bits per sample (usually 16 or 32, sometimes 24 or 8)
         /// Can be 0 for some codecs
         /// </summary>
-        public int BitsPerSample { get; set; }
+        public short BitsPerSample { get; set; }
 
         /// <summary>
         /// Returns the number of extra bytes used by this waveformat.
