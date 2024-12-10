@@ -139,6 +139,7 @@ namespace Captura.Video
 
         bool FrameWriter(TimeSpan Timestamp)
         {
+            // System.NullReferenceException:Object reference not set to an instance of an object.
             var editableFrame = _imageProvider.Capture();
 
             var frame = editableFrame.GenerateFrame(Timestamp);
