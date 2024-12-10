@@ -8,8 +8,8 @@ namespace Captura.Audio
         public static WaveFormat ToCaptura(this Wf Wf)
         {
             return Wf.Encoding == WfEnc.IeeeFloat
-                ? WaveFormat.CreateIeeeFloatWaveFormat(Wf.SampleRate, Wf.Channels)
-                : new WaveFormat(Wf.SampleRate, Wf.BitsPerSample, Wf.Channels);
+                ? WaveFormat.CreateIeeeFloatWaveFormat(Wf.SampleRate, (short)Wf.Channels)
+                : new WaveFormat(Wf.SampleRate, (short)Wf.BitsPerSample, (short)Wf.Channels);
         }
     }
 }
