@@ -92,11 +92,11 @@ namespace Captura.MouseKeyHook
                 ApplyOpacity(KeystrokesSettings.FontColor, Opacity),
                 new RectangleF(rect.Left + paddingX, rect.Top + paddingY, size.Width, size.Height));
 
-            var border = KeystrokesSettings.BorderThickness;
+            int border = KeystrokesSettings.BorderThickness;
 
             if (border > 0)
             {
-                rect = new RectangleF(rect.Left - border / 2f, rect.Top - border / 2f, rect.Width + border, rect.Height + border);
+                rect = new RectangleF(rect.Left - border * 0.5f, rect.Top - border * 0.5f, rect.Width + border, rect.Height + border);
 
                 Editor.DrawRectangle(ApplyOpacity(KeystrokesSettings.BorderColor, Opacity), border,
                     rect,

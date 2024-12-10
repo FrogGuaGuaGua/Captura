@@ -72,16 +72,16 @@ namespace Captura
             if (!(AdornedElement is FrameworkElement fel))
                 return;
 
-            var offsetX = (int)Args.HorizontalChange;
-            var offsetY = (int)Args.VerticalChange;
+            int offsetX = (int)Args.HorizontalChange;
+            int offsetY = (int)Args.VerticalChange;
 
-            var har = fel.HorizontalAlignment == HorizontalAlignment.Right;
-            var vab = fel.VerticalAlignment == VerticalAlignment.Bottom;
+            bool har = fel.HorizontalAlignment == HorizontalAlignment.Right;
+            bool vab = fel.VerticalAlignment == VerticalAlignment.Bottom;
 
-            var newX = (int)(har ? fel.Margin.Right : fel.Margin.Left);
-            var newY = (int)(vab ? fel.Margin.Bottom : fel.Margin.Top);
-            var newWidth = (int)fel.ActualWidth;
-            var newHeight = (int)fel.ActualHeight;
+            int newX = (int)(har ? fel.Margin.Right : fel.Margin.Left);
+            int newY = (int)(vab ? fel.Margin.Bottom : fel.Margin.Top);
+            int newWidth = (int)fel.ActualWidth;
+            int newHeight = (int)fel.ActualHeight;
 
             void ModifyX(bool Possitive)
             {
@@ -294,11 +294,11 @@ namespace Captura
         {
             base.ArrangeOverride(FinalSize);
 
-            var desireWidth = AdornedElement.RenderSize.Width;
-            var desireHeight = AdornedElement.RenderSize.Height;
-
-            var adornerWidth = DesiredSize.Width;
-            var adornerHeight = DesiredSize.Height;
+            double desireWidth = AdornedElement.RenderSize.Width;
+            double desireHeight = AdornedElement.RenderSize.Height;
+            
+            double adornerWidth = DesiredSize.Width;
+            double adornerHeight = DesiredSize.Height;
 
             _center.Height = desireHeight;
             _center.Width = desireWidth;

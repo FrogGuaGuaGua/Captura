@@ -78,8 +78,8 @@ namespace Captura.MouseKeyHook
 
                 if (border > 0)
                 {
-                    x -= border / 2f;
-                    y -= border / 2f;
+                    x -= border * 0.5f;
+                    y -= border * 0.5f;
                     d += border;
 
                     var borderColor = _settings.BorderColor;

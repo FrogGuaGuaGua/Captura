@@ -108,12 +108,12 @@ namespace Captura.Windows.DirectX
 
         Ellipse ToEllipse(RectangleF Rectangle)
         {
-            var center = new RawVector2(Rectangle.Left + Rectangle.Width / 2f,
-                Rectangle.Top + Rectangle.Height / 2f);
+            var center = new RawVector2(Rectangle.Left + Rectangle.Width * 0.5f,
+                Rectangle.Top + Rectangle.Height * 0.5f);
 
             return new Ellipse(center,
-                Rectangle.Width / 2f,
-                Rectangle.Height / 2f);
+                Rectangle.Width * 0.5f,
+                Rectangle.Height * 0.5f);
         }
 
         public void DrawLine(Point Start, Point End, Color Color, float Width)

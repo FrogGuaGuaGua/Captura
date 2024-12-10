@@ -51,7 +51,7 @@ namespace Captura.MouseKeyHook.Steps
 
             if (border > 0)
             {
-                rect = new RectangleF(rect.Left - border / 2f, rect.Top - border / 2f, rect.Width + border, rect.Height + border);
+                rect = new RectangleF(rect.Left - border * 0.5f, rect.Top - border * 0.5f, rect.Width + border, rect.Height + border);
 
                 Editor.DrawRectangle(Settings.BorderColor,
                     border,
