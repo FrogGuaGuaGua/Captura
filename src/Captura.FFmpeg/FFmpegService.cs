@@ -15,12 +15,12 @@ namespace Captura.FFmpeg
         {
             get
             {
-                var folderPath = GetSettings().GetFolderPath();
+                string folderPath = GetSettings().GetFolderPath();
 
                 // FFmpeg folder
                 if (!string.IsNullOrWhiteSpace(folderPath))
                 {
-                    var path = Path.Combine(folderPath, FFmpegExeName);
+                    string path = Path.Combine(folderPath, FFmpegExeName);
 
                     if (File.Exists(path))
                         return true;
@@ -50,12 +50,12 @@ namespace Captura.FFmpeg
         {
             get
             {
-                var folderPath = GetSettings().GetFolderPath();
+                string folderPath = GetSettings().GetFolderPath();
 
                 // FFmpeg folder
                 if (!string.IsNullOrWhiteSpace(folderPath))
                 {
-                    var path = Path.Combine(folderPath, FFmpegExeName);
+                    string path = Path.Combine(folderPath, FFmpegExeName);
 
                     if (File.Exists(path))
                         return path;

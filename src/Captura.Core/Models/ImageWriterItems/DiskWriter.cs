@@ -32,9 +32,9 @@ namespace Captura.Models
         {
             try
             {
-                var extension = Format.ToString().ToLower();
+                string extension = Format.ToString().ToLower();
 
-                var fileName = _settings.GetFileName(extension, FileName);
+                string fileName = _settings.GetFileName(extension, FileName);
 
                 Image.Save(fileName, Format);
 

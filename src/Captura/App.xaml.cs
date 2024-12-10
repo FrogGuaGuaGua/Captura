@@ -27,7 +27,7 @@ namespace Captura
 
         void App_OnDispatcherUnhandledException(object Sender, DispatcherUnhandledExceptionEventArgs Args)
         {
-            var dir = Path.Combine(ServiceProvider.SettingsDir, "Crashes");
+            string dir = Path.Combine(ServiceProvider.SettingsDir, "Crashes");
 
             Directory.CreateDirectory(dir);
 
@@ -70,7 +70,7 @@ namespace Captura
 
         void OnCurrentDomainOnUnhandledException(object S, UnhandledExceptionEventArgs E)
         {
-            var dir = Path.Combine(ServiceProvider.SettingsDir, "Crashes");
+            string dir = Path.Combine(ServiceProvider.SettingsDir, "Crashes");
 
             Directory.CreateDirectory(dir);
 
@@ -126,7 +126,7 @@ namespace Captura
                 AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;
             }
 
-            var accent = Settings.UI.AccentColor;
+            string accent = Settings.UI.AccentColor;
 
             if (!string.IsNullOrEmpty(accent))
             {

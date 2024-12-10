@@ -85,7 +85,7 @@ namespace Captura.Video
 
         public IEditableFrame Capture()
         {
-            var cursorPos = _platformServices.CursorPosition;
+            Point cursorPos = _platformServices.CursorPosition;
 
             var offsetRegion = new Rectangle(_regionAroundMouse.Location, _regionAroundMouse.Size);
             offsetRegion.Inflate(-_margin, -_margin);
@@ -94,7 +94,7 @@ namespace Captura.Video
             {
                 ShiftRegion(cursorPos, offsetRegion);
 
-                var screenBounds = _platformServices.DesktopRectangle;
+                Rectangle screenBounds = _platformServices.DesktopRectangle;
                 CheckBounds(screenBounds);
             }
 

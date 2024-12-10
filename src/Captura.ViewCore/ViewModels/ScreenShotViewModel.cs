@@ -45,9 +45,9 @@ namespace Captura.ViewModels
                 }
                 .CombineLatest(M =>
                 {
-                    var noVideo = M[0];
-                    var webcamMode = M[1];
-                    var noWebcam = M[2];
+                    bool noVideo = M[0];
+                    bool webcamMode = M[1];
+                    bool noWebcam = M[2];
 
                     if (webcamMode)
                         return !noWebcam;

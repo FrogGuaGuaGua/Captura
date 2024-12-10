@@ -91,14 +91,14 @@ namespace Captura.Video
         {
             try
             {
-                var frameInterval = TimeSpan.FromSeconds(1.0 / _frameRate);
+                TimeSpan frameInterval = TimeSpan.FromSeconds(1.0 / _frameRate);
                 _frameCount = 0;
 
                 // Returns false when stopped
 
                 while (_continueCapturing.WaitOne() && !_cancellationToken.IsCancellationRequested)
                 {
-                    var timestamp = _sw.Elapsed;
+                    TimeSpan timestamp = _sw.Elapsed;
 
                     if (_frameWriteTask != null)
                     {
@@ -117,7 +117,7 @@ namespace Captura.Video
 
                     _frameWriteTask = Task.Run(() => FrameWriter(timestamp));
 
-                    var timeTillNextFrame = timestamp + frameInterval - _sw.Elapsed;
+                    TimeSpan timeTillNextFrame = timestamp + frameInterval - _sw.Elapsed;
 
                     if (timeTillNextFrame > TimeSpan.Zero)
                         Thread.Sleep(timeTillNextFrame);
@@ -143,7 +143,7 @@ namespace Captura.Video
 
             var frame = editableFrame.GenerateFrame(Timestamp);
 
-            var success = AddFrame(frame);
+            bool success = AddFrame(frame);
 
             if (!success)
             {
@@ -166,8 +166,8 @@ namespace Captura.Video
 
         bool WriteDuplicateFrame()
         {
-            var requiredFrames = _sw.Elapsed.TotalSeconds * _frameRate;
-            var diff = requiredFrames - _frameCount;
+            double requiredFrames = _sw.Elapsed.TotalSeconds * _frameRate;
+            double diff = requiredFrames - _frameCount;
 
             // Write atmost 1 duplicate frame
             if (diff >= 1)
@@ -183,7 +183,12 @@ namespace Captura.Video
         {
             try
             {
-                _videoWriter.WriteFrame(Frame);
+                if (Frame == null)
+                {
+                    return false;
+                }
+                
+                _videoWriter.WriteFrame(Frame); // System.NullReferenceException:“Object reference not set to an instance of an object.”
 
                 ++_frameCount;
 
@@ -203,7 +208,7 @@ namespace Captura.Video
             }
 
             // These values need to be long otherwise can get out of range in a few hours
-            var shouldHaveWritten = (_frameCount - 1L) * _audioBytesPerFrame;
+            long shouldHaveWritten = (_frameCount - 1L) * _audioBytesPerFrame;
 
             // Already written more than enough, skip for now
             if (_audioBytesWritten >= shouldHaveWritten)
@@ -211,7 +216,7 @@ namespace Captura.Video
                 return;
             }
 
-            var toWrite = (int)(shouldHaveWritten - _audioBytesWritten);
+            int toWrite = (int)(shouldHaveWritten - _audioBytesWritten);
 
             // Only write if data to write is more than chunk size.
             // This gives enough time for the audio provider to buffer data from the source.
@@ -226,7 +231,7 @@ namespace Captura.Video
                 _audioBuffer = new byte[toWrite];
             }
 
-            var read = _audioProvider.Read(_audioBuffer, 0, toWrite);
+            int read = _audioProvider.Read(_audioBuffer, 0, toWrite);
 
             // Nothing read
             if (read == 0)
@@ -238,7 +243,7 @@ namespace Captura.Video
             _audioBytesWritten += read;
 
             // Fill with silence to maintain synchronization
-            var silenceToWrite = toWrite - read;
+            int silenceToWrite = toWrite - read;
 
             // Write silence only when more than a threshold
             // Threshold should ideally be a bit greater than chunk size

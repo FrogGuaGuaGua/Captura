@@ -96,12 +96,12 @@ namespace Captura.ViewModels
                 }
                 .CombineLatest(M =>
                 {
-                    var audioEnabled = M[0];
-                    var audioOnlyMode = M[1];
-                    var webcamMode = M[2];
-                    var noWebcam = M[3];
-                    var stepsMode = M[4];
-                    var supportsStepsMode = M[5];
+                    bool audioEnabled = M[0];
+                    bool audioOnlyMode = M[1];
+                    bool webcamMode = M[2];
+                    bool noWebcam = M[3];
+                    bool stepsMode = M[4];
+                    bool supportsStepsMode = M[5];
 
                     if (stepsMode)
                         return supportsStepsMode;
@@ -174,8 +174,8 @@ namespace Captura.ViewModels
             FileRecentItem savingRecentItem = null;
             FileSaveNotification notification = null;
 
-            var fileName = _recordingModel.CurrentFileName;
-            var isVideo = _recordingModel.IsVideo;
+            string fileName = _recordingModel.CurrentFileName;
+            bool isVideo = _recordingModel.IsVideo;
 
             IVideoConverter postWriter = null;
 
@@ -202,7 +202,7 @@ namespace Captura.ViewModels
                 _stopRecTasks.Add(task);
             }
 
-            var wasWaiting = _timerModel.Waiting;
+            bool wasWaiting = _timerModel.Waiting;
             _timerModel.Waiting = false;
 
             try
@@ -218,7 +218,7 @@ namespace Captura.ViewModels
 
                     progress.ProgressChanged += (S, E) => notification.Progress = E;
 
-                    var outFileName = Path.Combine(
+                    string outFileName = Path.Combine(
                         Path.GetDirectoryName(fileName),
                         $"{Path.GetFileNameWithoutExtension(fileName)}.converted{postWriter.Extension}");
 
@@ -234,7 +234,7 @@ namespace Captura.ViewModels
 
                         File.Delete(fileName);
 
-                        var targetFileName = Path.Combine(
+                        string targetFileName = Path.Combine(
                             Path.GetDirectoryName(fileName),
                             $"{Path.GetFileNameWithoutExtension(fileName)}{postWriter.Extension}");
 

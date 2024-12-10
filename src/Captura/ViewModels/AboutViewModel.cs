@@ -25,7 +25,7 @@ namespace Captura.ViewModels
             AppVersion = "v" + Version.ToString(3);
 
             HyperlinkCommand = new ReactiveCommand<string>()
-                .WithSubscribe(M => Process.Start(M));
+                .WithSubscribe(M => Process.Start(new ProcessStartInfo(M) { UseShellExecute = true }));
         }
     }
 }

@@ -32,10 +32,10 @@ namespace Captura.Video
 
         public IBitmapImage Capture(bool IncludeCursor)
         {
-            var cursorPos = _platformServices.CursorPosition;
-            var screenBounds = _platformServices.DesktopRectangle;
-            var w = _settings.AroundMouse.Width;
-            var h = _settings.AroundMouse.Height;
+            Point cursorPos = _platformServices.CursorPosition;
+            Rectangle screenBounds = _platformServices.DesktopRectangle;
+            int w = _settings.AroundMouse.Width;
+            int h = _settings.AroundMouse.Height;
 
             var region = new Rectangle(cursorPos.X - w / 2, cursorPos.Y - h / 2, w, h);
 

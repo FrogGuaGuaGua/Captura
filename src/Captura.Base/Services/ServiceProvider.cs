@@ -22,7 +22,7 @@ namespace Captura
             {
                 if (_settingsDir == null)
                 {
-                    var localSettings = Path.Combine(AppDir, "Settings");
+                    string localSettings = Path.Combine(AppDir, "Settings");
 
                     if (Directory.Exists(localSettings))
                     {
@@ -30,7 +30,7 @@ namespace Captura
                     }
                     else
                     {
-                        var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                        string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
                         _settingsDir = Path.Combine(appDataPath, nameof(Captura));
                     }
@@ -103,7 +103,7 @@ namespace Captura
         {
             get
             {
-                var location = Assembly.GetEntryAssembly()?.Location;
+                string location = Assembly.GetEntryAssembly()?.Location;
 
                 return location == null ? "" : Path.GetDirectoryName(location);
             }

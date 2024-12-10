@@ -110,7 +110,7 @@ namespace Captura.ViewModels
                 // Error can happen if current folder is inaccessible
             }
 
-            var folder = _dialogService.PickFolder(currentFolder, Loc.SelectOutFolder);
+            string folder = _dialogService.PickFolder(currentFolder, Loc.SelectOutFolder);
 
             if (folder != null)
                 Settings.OutPath = folder;

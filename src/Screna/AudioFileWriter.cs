@@ -101,7 +101,7 @@ namespace Captura.Audio
                 if (!_riff)
                     return;
 
-                var pos = _writer.BaseStream.Position;
+                Point pos = _writer.BaseStream.Position;
                 UpdateHeader();
                 _writer.BaseStream.Position = pos;
             }
@@ -119,7 +119,7 @@ namespace Captura.Audio
             // UpdateFactChunk
             if (HasFactChunk)
             {
-                var bitsPerSample = _format.BitsPerSample * _format.Channels;
+                int bitsPerSample = _format.BitsPerSample * _format.Channels;
                 if (bitsPerSample != 0)
                 {
                     _writer.Seek((int)_factSampleCountPos, SeekOrigin.Begin);

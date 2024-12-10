@@ -9,7 +9,7 @@ namespace Captura.Tests.Console
     {
         static Process Start(string Arguments)
         {
-            var path = TestManagerFixture.GetCliPath();
+            string path = TestManagerFixture.GetCliPath();
 
             var process = new Process
             {

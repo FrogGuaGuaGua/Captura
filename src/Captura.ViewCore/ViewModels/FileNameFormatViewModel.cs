@@ -51,9 +51,9 @@ namespace Captura.ViewModels
             get => Settings.FilenameFormat;
             set
             {
-                var invalidChars = Path.GetInvalidFileNameChars();
+                char[] invalidChars = Path.GetInvalidFileNameChars();
 
-                foreach (var invalidChar in invalidChars)
+                foreach (char invalidChar in invalidChars)
                 {
                     if (invalidChar == '/' || invalidChar == '\\')
                         continue;

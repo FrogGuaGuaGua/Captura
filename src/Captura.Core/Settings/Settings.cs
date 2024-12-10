@@ -45,7 +45,7 @@ namespace Captura
         {
             try
             {
-                var json = File.ReadAllText(GetPath());
+                string json = File.ReadAllText(GetPath());
 
                 JsonConvert.PopulateObject(json, this);
 
@@ -142,7 +142,7 @@ namespace Captura
 
         public string GetOutputPath()
         {
-            var path = OutPath;
+            string path = OutPath;
 
             string DefaultOutDir() => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), nameof(Captura));
 
@@ -179,14 +179,14 @@ namespace Captura
             if (!Extension.StartsWith("."))
                 Extension = $".{Extension}";
 
-            var outPath = GetOutputPath();
+            string outPath = GetOutputPath();
 
             if (string.IsNullOrWhiteSpace(FilenameFormat))
                 return Path.Combine(outPath, $"{DateTime.Now:yyyy-MM-dd-HH-mm-ss}{Extension}");
 
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
 
-            var filename = FilenameFormat
+            string filename = FilenameFormat
                 .Replace("%computer%", Environment.MachineName)
                 .Replace("%user%", Environment.UserName)
 
@@ -209,16 +209,16 @@ namespace Captura
                 .Replace("%tt%", now.ToString("tt"))
                 .Replace("%zzz%", now.ToString("zzz"));
 
-            var path = Path.Combine(outPath, $"{filename}{Extension}");
+            string path = Path.Combine(outPath, $"{filename}{Extension}");
 
-            var baseDir = Path.GetDirectoryName(path);
+            string baseDir = Path.GetDirectoryName(path);
             if (baseDir != null)
                 Directory.CreateDirectory(baseDir);
 
             if (!File.Exists(path))
                 return path;
 
-            var i = 1;
+            int i = 1;
 
             do
             {
