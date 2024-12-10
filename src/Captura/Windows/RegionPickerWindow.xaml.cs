@@ -68,7 +68,7 @@ namespace Captura
 
                 SizeText.Text = $"{(int)rect.Width} x {(int)rect.Height}";
 
-                SizeText.Margin = new Thickness(rect.Left + rect.Width / 2 - SizeText.ActualWidth / 2, rect.Top + rect.Height / 2 - SizeText.ActualHeight / 2, 0, 0);
+                SizeText.Margin = new Thickness(rect.Left + rect.Width * 0.5 - SizeText.ActualWidth * 0.5, rect.Top + rect.Height * 0.5 - SizeText.ActualHeight * 0.5, 0, 0);
 
                 SizeText.Visibility = Visibility.Visible;
             }

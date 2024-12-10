@@ -28,7 +28,7 @@ namespace Captura.Video
                     return FullWidth - x - OverlaySettings.Width;
 
                 case Alignment.Center:
-                    return FullWidth / 2 + x - OverlaySettings.Width / 2f;
+                    return FullWidth * 0.5f + x - OverlaySettings.Width * 0.5f;
 
                 default:
                     return 0;
@@ -48,7 +48,7 @@ namespace Captura.Video
                     return FullHeight - y - OverlaySettings.Height;
 
                 case Alignment.Center:
-                    return FullHeight / 2 + y - OverlaySettings.Height / 2f;
+                    return FullHeight * 0.5f + y - OverlaySettings.Height * 0.5f;
 
                 default:
                     return 0;

@@ -29,8 +29,8 @@ namespace Captura.MouseKeyHook.Steps
 
             Editor.FillEllipse(_settings.Color, new RectangleF(p.X - r, p.Y - r, d, d));
 
-            var above = new Point(p.X, p.Y + r / 2);
-            var below = new Point(p.X, p.Y - r / 2);
+            var above = new Point(p.X, p.Y + r >> 1);
+            var below = new Point(p.X, p.Y - r >> 1);
 
             if (Args.Delta < 0)
             {

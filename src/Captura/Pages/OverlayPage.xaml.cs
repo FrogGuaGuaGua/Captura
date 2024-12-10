@@ -343,7 +343,7 @@ namespace Captura
 
         void UpdateMouseClickPosition(Point Position)
         {
-            MouseClick.Margin = new Thickness(Position.X - MouseClick.ActualWidth / 2, Position.Y - MouseClick.ActualHeight / 2, 0, 0);
+            MouseClick.Margin = new Thickness(Position.X - MouseClick.ActualWidth * 0.5, Position.Y - MouseClick.ActualHeight * 0.5, 0, 0);
         }
 
         void UIElement_OnMouseDown(object Sender, MouseButtonEventArgs E)
@@ -372,8 +372,8 @@ namespace Captura
         bool IsOutsideGrid(Point Point)
         {
             return Point.X <= 0 || Point.Y <= 0
-                   || Point.X + MouseClick.ActualWidth / 2 >= Grid.ActualWidth
-                   || Point.Y + MouseClick.ActualHeight / 2 >= Grid.ActualHeight;
+                   || Point.X + MouseClick.ActualWidth * 0.5 >= Grid.ActualWidth
+                   || Point.Y + MouseClick.ActualHeight * 0.5 >= Grid.ActualHeight;
         }
 
         void UIElement_OnMouseMove(object Sender, MouseEventArgs E)
@@ -395,8 +395,8 @@ namespace Captura
                 UpdateMouseClickPosition(position);
             }
 
-            position.X -= MouseClick.ActualWidth / 2;
-            position.Y -= MouseClick.ActualHeight / 2;
+            position.X -= MouseClick.ActualWidth * 0.5;
+            position.Y -= MouseClick.ActualHeight * 0.5;
 
             MousePointer.Margin = new Thickness(position.X, position.Y, 0, 0);
         }

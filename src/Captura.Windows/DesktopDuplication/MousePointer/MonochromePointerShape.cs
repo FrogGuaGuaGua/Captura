@@ -12,7 +12,7 @@ namespace Captura.Windows.DesktopDuplication
         public MonochromePointerShape(IntPtr ShapeBuffer,
             OutputDuplicatePointerShapeInformation ShapeInfo,
             Direct2DEditorSession EditorSession)
-            : base(ShapeInfo.Width, ShapeInfo.Height / 2, EditorSession)
+            : base(ShapeInfo.Width, ShapeInfo.Height >> 1, EditorSession)
         {
             _andMaskBuffer = new byte[Width * Height / 8];
             Marshal.Copy(ShapeBuffer, _andMaskBuffer, 0, _andMaskBuffer.Length);

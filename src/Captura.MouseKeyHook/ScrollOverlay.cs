@@ -36,8 +36,8 @@ namespace Captura.MouseKeyHook
 
                 Editor.FillEllipse(_settings.ScrollCircleColor, new RectangleF(p.X - r, p.Y - r, d, d));
 
-                var above = new Point(p.X, p.Y + r / 2);
-                var below = new Point(p.X, p.Y - r / 2);
+                var above = new Point(p.X, p.Y + r >> 1);
+                var below = new Point(p.X, p.Y - r >> 1);
 
                 // Scroll down
                 if (args.Delta < 0)

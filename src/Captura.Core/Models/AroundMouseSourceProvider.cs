@@ -37,7 +37,7 @@ namespace Captura.Video
             int w = _settings.AroundMouse.Width;
             int h = _settings.AroundMouse.Height;
 
-            var region = new Rectangle(cursorPos.X - w / 2, cursorPos.Y - h / 2, w, h);
+            var region = new Rectangle(cursorPos.X - w >> 1, cursorPos.Y - h >> 1, w, h);
 
             if (region.Right > screenBounds.Right)
             {

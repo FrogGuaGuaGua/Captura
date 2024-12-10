@@ -118,7 +118,7 @@ namespace Captura.MouseKeyHook
                     return FullWidth - x - TextWidth - 2 * padding;
 
                 case Alignment.Center:
-                    return FullWidth / 2 + x - TextWidth / 2 - padding;
+                    return FullWidth * 0.5f + x - TextWidth * 0.5f - padding;
 
                 default:
                     return 0;
@@ -139,7 +139,7 @@ namespace Captura.MouseKeyHook
                     return FullHeight - y - TextHeight - 2 * padding - Offset;
 
                 case Alignment.Center:
-                    return FullHeight / 2 + y - TextHeight / 2 - padding + Offset;
+                    return FullHeight * 0.5f + y - TextHeight * 0.5f - padding + Offset;
 
                 default:
                     return 0;

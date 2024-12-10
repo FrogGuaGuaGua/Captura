@@ -306,21 +306,21 @@ namespace Captura
 
             if (_canResize)
             {
-                _topLeft.Arrange(new Rect(-adornerWidth / 2, -adornerHeight / 2, adornerWidth, adornerHeight));
-                _topRight.Arrange(new Rect(desireWidth - adornerWidth / 2, -adornerHeight / 2, adornerWidth,
+                _topLeft.Arrange(new Rect(-adornerWidth * 0.5, -adornerHeight * 0.5, adornerWidth, adornerHeight));
+                _topRight.Arrange(new Rect(desireWidth - adornerWidth * 0.5, -adornerHeight * 0.5, adornerWidth,
                     adornerHeight));
-                _bottomLeft.Arrange(new Rect(-adornerWidth / 2, desireHeight - adornerHeight / 2, adornerWidth,
+                _bottomLeft.Arrange(new Rect(-adornerWidth * 0.5, desireHeight - adornerHeight * 0.5, adornerWidth,
                     adornerHeight));
-                _bottomRight.Arrange(new Rect(desireWidth - adornerWidth / 2, desireHeight - adornerHeight / 2,
+                _bottomRight.Arrange(new Rect(desireWidth - adornerWidth * 0.5, desireHeight - adornerHeight * 0.5,
                     adornerWidth, adornerHeight));
 
-                _top.Arrange(new Rect(desireWidth / 2 - adornerWidth / 2, -adornerHeight / 2, adornerWidth,
+                _top.Arrange(new Rect(desireWidth * 0.5 - adornerWidth * 0.5, -adornerHeight * 0.5, adornerWidth,
                     adornerHeight));
-                _left.Arrange(new Rect(-adornerWidth / 2, desireHeight / 2 - adornerHeight / 2, adornerWidth,
+                _left.Arrange(new Rect(-adornerWidth * 0.5, desireHeight * 0.5 - adornerHeight * 0.5, adornerWidth,
                     adornerHeight));
-                _right.Arrange(new Rect(desireWidth - adornerWidth / 2, desireHeight / 2 - adornerHeight / 2,
+                _right.Arrange(new Rect(desireWidth - adornerWidth * 0.5, desireHeight * 0.5 - adornerHeight * 0.5,
                     adornerWidth, adornerHeight));
-                _bottom.Arrange(new Rect(desireWidth / 2 - adornerWidth / 2, desireHeight - adornerHeight / 2,
+                _bottom.Arrange(new Rect(desireWidth * 0.5 - adornerWidth * 0.5, desireHeight - adornerHeight * 0.5,
                     adornerWidth, adornerHeight));
             }
 

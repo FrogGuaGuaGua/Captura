@@ -40,8 +40,8 @@ namespace Captura.Video
 
             if (border > 0)
             {
-                x -= border / 2;
-                y -= border / 2;
+                x -= border >> 1;
+                y -= border >> 1;
                 d += border;
 
                 Editor.DrawEllipse(_settings.BorderColor, border, new RectangleF(x, y, d, d));

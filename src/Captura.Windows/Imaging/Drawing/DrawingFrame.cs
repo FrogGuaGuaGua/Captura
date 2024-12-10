@@ -36,7 +36,7 @@ namespace Captura.Windows.Gdi
 
             try
             {
-                var rowSize = Math.Abs(bits.Stride);
+                int rowSize = Math.Abs(bits.Stride);
 
                 Parallel.For(0, Height, Y =>
                 {

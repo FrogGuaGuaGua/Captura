@@ -23,7 +23,7 @@ namespace Captura.Audio
 
             var wf = _audioProvider.WaveFormat;
 
-            var bufferSize = (int)
+            int bufferSize = (int)
             (
                 (ReadInterval / 1000.0)
                 * wf.SampleRate

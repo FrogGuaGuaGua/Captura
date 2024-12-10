@@ -264,18 +264,18 @@ namespace Captura
             _crtTopLeft.SetPos(Rect.Left, Rect.Top);
             _crtTopRight.SetPos(Rect.Right, Rect.Top);
             _crtBottomLeft.SetPos(Rect.Left, Rect.Bottom);
-            _crtTop.SetPos(Rect.Left + Rect.Width / 2, Rect.Top);
-            _crtBottom.SetPos(Rect.Left + Rect.Width / 2, Rect.Bottom);
-            _crtLeft.SetPos(Rect.Left, Rect.Top + Rect.Height / 2);
-            _crtRight.SetPos(Rect.Right, Rect.Top + Rect.Height / 2);
+            _crtTop.SetPos(Rect.Left + Rect.Width * 0.5, Rect.Top);
+            _crtBottom.SetPos(Rect.Left + Rect.Width * 0.5, Rect.Bottom);
+            _crtLeft.SetPos(Rect.Left, Rect.Top + Rect.Height * 0.5);
+            _crtRight.SetPos(Rect.Right, Rect.Top + Rect.Height * 0.5);
 
             _crtMove.Width = Rect.Width;
             _crtMove.Height = Rect.Height;
             Canvas.SetLeft(_crtMove, Rect.Left);
             Canvas.SetTop(_crtMove, Rect.Top);
 
-            Canvas.SetLeft(_checkButton, Rect.Right - _checkButton.ActualWidth - 15);
-            Canvas.SetTop(_checkButton, Rect.Bottom - _checkButton.ActualHeight - 10);
+            Canvas.SetLeft(_checkButton, Rect.Right - _checkButton.ActualWidth - 15.0);
+            Canvas.SetTop(_checkButton, Rect.Bottom - _checkButton.ActualHeight - 10.0);
         }
 
         // Arrange the Adorners.
@@ -363,8 +363,8 @@ namespace Captura
 
             public void SetPos(double X, double Y)
             {
-                Canvas.SetTop(this, Y - _width / 2.0);
-                Canvas.SetLeft(this, X - _width / 2.0);
+                Canvas.SetTop(this, Y - _width * 0.5);
+                Canvas.SetLeft(this, X - _width * 0.5);
             }
         }
     }

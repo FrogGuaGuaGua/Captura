@@ -40,7 +40,7 @@ namespace Captura.Video
             switch (_settings.HorizontalAlignment)
             {
                 case Alignment.Center:
-                    point.X = Bounds.Width / 2 - ImageSize.Width / 2f + point.X;
+                    point.X = Bounds.Width * 0.5f - ImageSize.Width * 0.5f + point.X;
                     break;
 
                 case Alignment.End:
@@ -51,7 +51,7 @@ namespace Captura.Video
             switch (_settings.VerticalAlignment)
             {
                 case Alignment.Center:
-                    point.Y = Bounds.Height / 2 - ImageSize.Height / 2f + point.Y;
+                    point.Y = Bounds.Height * 0.5f - ImageSize.Height * 0.5f + point.Y;
                     break;
 
                 case Alignment.End:

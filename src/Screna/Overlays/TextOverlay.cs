@@ -27,7 +27,7 @@ namespace Captura.Video
                     return FullWidth - x - TextWidth - 2 * OverlaySettings.HorizontalPadding;
 
                 case Alignment.Center:
-                    return FullWidth / 2 + x - TextWidth / 2 - OverlaySettings.HorizontalPadding;
+                    return FullWidth * 0.5f + x - TextWidth * 0.5f - OverlaySettings.HorizontalPadding;
 
                 default:
                     return 0;
@@ -47,7 +47,7 @@ namespace Captura.Video
                     return FullHeight - y - TextHeight - 2 * OverlaySettings.VerticalPadding;
 
                 case Alignment.Center:
-                    return FullHeight / 2 + y - TextHeight / 2 - OverlaySettings.VerticalPadding;
+                    return FullHeight * 0.5f + y - TextHeight * 0.5f - OverlaySettings.VerticalPadding;
 
                 default:
                     return 0;
