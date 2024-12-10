@@ -14,7 +14,7 @@ namespace Captura.ViewModels
         public UpdateCheckerViewModel(IUpdateChecker UpdateChecker)
         {
             _updateChecker = UpdateChecker;
-            BuildName = UpdateChecker.BuildName;
+            //BuildName = UpdateChecker.BuildName;
 
             Check();
 
@@ -29,37 +29,37 @@ namespace Captura.ViewModels
 
         void Check()
         {
-            if (Checking)
-                return;
+            //if (Checking)
+            //    return;
 
-            Checking = true;
-            UpdateAvailable = false;
-            CheckFailed = false;
+            //Checking = true;
+            //UpdateAvailable = false;
+            //CheckFailed = false;
 
-            Task.Run(async () =>
-            {
-                try
-                {
-                    var newVersion = await _updateChecker.Check();
+            //Task.Run(async () =>
+            //{
+            //    try
+            //    {
+            //        var newVersion = await _updateChecker.Check();
 
-                    if (newVersion != null)
-                    {
-                        UpdateAvailable = true;
+            //        if (newVersion != null)
+            //        {
+            //            UpdateAvailable = true;
 
-                        NewVersion = "v" + newVersion;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.ToString());
+            //            NewVersion = "v" + newVersion;
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e.ToString());
 
-                    CheckFailed = true;
-                }
-                finally
-                {
-                    Checking = false;
-                }
-            });
+            //        CheckFailed = true;
+            //    }
+            //    finally
+            //    {
+            //        Checking = false;
+            //    }
+            //});
         }
 
         bool _checking, _available, _checkFailed;

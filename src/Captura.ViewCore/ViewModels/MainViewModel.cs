@@ -94,7 +94,7 @@ namespace Captura.ViewModels
 
         void OpenOutputFolder()
         {
-            Process.Start(Settings.GetOutputPath());
+            Process.Start(new ProcessStartInfo(Settings.GetOutputPath()) { UseShellExecute = true });
         }
 
         void SelectOutputFolder()

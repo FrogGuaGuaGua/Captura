@@ -83,11 +83,7 @@ namespace Captura
         {
             try
             {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = StartInfo.FileName,
-                    UseShellExecute = true
-                });
+                Process.Start(new ProcessStartInfo(StartInfo.FileName) { UseShellExecute = true });
             }
             catch (Win32Exception e) when (e.NativeErrorCode == 2)
             {
